@@ -131,8 +131,39 @@ body {
 .dir-card.d4 .tag { background:#431407; color:#fb923c; }
 .dir-card.d5:hover { border-color: #38bdf8; }
 .dir-card.d5 .tag { background:#0c1929; color:#38bdf8; }
-.dir-card.d6:hover { border-color: #fbbf24; }
-.dir-card.d6 .tag { background:#422006; color:#fbbf24; }
+.dir-card .card-links {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dir-card .card-mo-link {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.card-mo-link.active {
+  background: #1e3a5f;
+  color: #93c5fd;
+  border: 1px solid #3b82f6;
+}
+.card-mo-link.active:hover { background: #1e4a7f; }
+.card-mo-link.upcoming {
+  background: transparent;
+  color: #475569;
+  border: 1px dashed #334155;
+}
+.dir-card.d1 .card-mo-link.active { border-color: #34d399; color: #34d399; background: #065f46; }
+.dir-card.d2 .card-mo-link.active { border-color: #f472b6; color: #f472b6; background: #701a75; }
+.dir-card.d3 .card-mo-link.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
+.dir-card.d4 .card-mo-link.active { border-color: #fb923c; color: #fb923c; background: #431407; }
+.dir-card.d5 .card-mo-link.active { border-color: #38bdf8; color: #38bdf8; background: #0c1929; }
+.dir-card.d6 .card-mo-link.active { border-color: #fbbf24; color: #fbbf24; background: #422006; }
 
 /* ====== ARCHIVE ====== */
 .archive {
@@ -235,42 +266,84 @@ body {
     <div class="line"></div>
   </div>
   <div class="directions">
-    <a href="2026/06/" class="dir-card d1">
+    <!-- ESG -->
+    <div class="dir-card d1">
       <div class="icon">🌱</div>
       <h3>ESG与可持续发展</h3>
       <p>绿色债券、气候金融、企业社会责任、环境治理</p>
       <span class="tag">ESG</span>
-    </a>
-    <a href="2026/06/" class="dir-card d2">
+      <div class="card-links">
+        <a href="2026/06/#esg" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
+    <!-- M&A -->
+    <div class="dir-card d2">
       <div class="icon">💼</div>
       <h3>资产并购</h3>
       <p>私募股权、并购合同、收购防御策略、审计商业化</p>
       <span class="tag">M&A</span>
-    </a>
-    <a href="2026/06/" class="dir-card d3">
+      <div class="card-links">
+        <a href="2026/06/#ma" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
+    <!-- AI Marketing -->
+    <div class="dir-card d3">
       <div class="icon">🤖</div>
       <h3>AI营销与数智营销</h3>
       <p>个性化推荐、AI零售、消费者偏好建模、人机协作购物</p>
       <span class="tag">AI Marketing</span>
-    </a>
-    <a href="2026/06/" class="dir-card d4">
+      <div class="card-links">
+        <a href="2026/06/#ai-marketing" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
+    <!-- Health -->
+    <div class="dir-card d4">
       <div class="icon">🏥</div>
       <h3>健康信息管理</h3>
       <p>移动健康、医疗IT整合、可穿戴设备、慢病管理</p>
       <span class="tag">Health IT</span>
-    </a>
-    <a href="2026/06/" class="dir-card d5">
+      <div class="card-links">
+        <a href="2026/06/#health" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
+    <!-- Supply Chain -->
+    <div class="dir-card d5">
       <div class="icon">📦</div>
       <h3>供应链运用与管理</h3>
       <p>供应链协调、库存优化、金融冲击传导、流行病建模</p>
       <span class="tag">Supply Chain</span>
-    </a>
-    <a href="2026/06/" class="dir-card d6">
+      <div class="card-links">
+        <a href="2026/06/#supply-chain" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
+    <!-- HR -->
+    <div class="dir-card d6">
       <div class="icon">👥</div>
       <h3>AI环境下的人力资源管理</h3>
       <p>AI团队协作、性别平等、危机领导力、全球人才</p>
       <span class="tag">AI + HR</span>
-    </a>
+      <div class="card-links">
+        <a href="2026/06/#hr" class="card-mo-link active">2026年6月</a>
+        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">1月</span>
+      </div>
+    </div>
   </div>
 
   <!-- ====== 往期简报 ====== -->
