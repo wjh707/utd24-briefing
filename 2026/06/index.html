@@ -359,6 +359,10 @@ body {
 
 <div class="header">
   <div class="header-inner">
+    <div class="breadcrumb" style="font-size:11px;color:#64748b;margin-bottom:6px;">
+      <a href="../.." style="color:#818cf8;text-decoration:none;">🏠 首页</a> &rsaquo; 2026年 &rsaquo; 6月
+      <span id="breadcrumbTopic" style="display:none;"></span>
+    </div>
     <h1>武汉纺织大学管理学院 · 科研简报</h1>
     <div class="subtitle">2026年6月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div>
     <div class="stats">
@@ -805,9 +809,15 @@ body {
 
 <script>
 var currentTopic = null;
+var topicNames = {esg:'ESG与可持续发展',ma:'资产并购',ai:'AI营销与数智营销',health:'健康信息管理',sc:'供应链运用与管理',hr:'AI环境下的人力资源管理'};
 
 function switchTopic(topic) {
   currentTopic = topic;
+  // Breadcrumb
+  var bc = document.getElementById('breadcrumbTopic');
+  bc.textContent = ' › ' + (topicNames[topic]||topic);
+  bc.style.display = 'inline';
+
   // Update tabs
   document.querySelectorAll('.topic-tab').forEach(t => t.classList.remove('active'));
   var tab = document.querySelector('.topic-tab[data-topic="'+topic+'"]');
@@ -828,6 +838,7 @@ function switchTopic(topic) {
 
 function showAll() {
   currentTopic = null;
+  document.getElementById('breadcrumbTopic').style.display = 'none';
   document.getElementById('kanban').classList.remove('filtered');
   document.getElementById('showAllBar').classList.remove('visible');
   document.querySelectorAll('.column').forEach(c => c.classList.add('active'));
