@@ -12,114 +12,49 @@ body {
   color: #e2e8f0;
   min-height: 100vh;
 }
-
-/* ====== HEADER ====== */
 .hero {
   background: linear-gradient(180deg, #1a1a2e 0%, #16213e 60%, #0f172a 100%);
-  padding: 60px 20px 40px;
-  text-align: center;
-  border-bottom: 1px solid #1e293b;
+  padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #1e293b;
 }
 .hero .badge {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  background: rgba(99,102,241,0.15);
-  color: #818cf8;
-  border: 1px solid rgba(99,102,241,0.3);
+  display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 11px;
+  font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+  background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3);
 }
-.hero h1 {
-  font-size: clamp(24px, 5vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 8px;
-}
+.hero h1 { font-size: clamp(24px, 5vw, 40px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
 .hero h1 .school {
   background: linear-gradient(135deg, #e2e8f0, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero h1 .briefing {
   background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.hero .subtitle {
-  color: #64748b;
-  font-size: clamp(13px, 2vw, 15px);
-}
-.hero .meta {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.hero .meta span {
-  font-size: 12px;
-  color: #475569;
-}
-
-/* ====== CONTAINER ====== */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ====== SECTION TITLE ====== */
-.section-title {
-  text-align: center;
-  padding: 40px 0 16px;
-}
-.section-title h2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #94a3b8;
-}
+.hero .subtitle { color: #64748b; font-size: clamp(13px, 2vw, 15px); }
+.hero .meta { margin-top: 12px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.hero .meta span { font-size: 12px; color: #475569; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.section-title { text-align: center; padding: 40px 0 16px; }
+.section-title h2 { font-size: 18px; font-weight: 600; color: #94a3b8; }
 .section-title .line {
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, #60a5fa, #a78bfa);
-  margin: 10px auto 0;
-  border-radius: 2px;
+  width: 40px; height: 3px; background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  margin: 10px auto 0; border-radius: 2px;
 }
-
-/* ====== DIRECTION GRID ====== */
 .directions {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  padding: 20px 0 32px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px; padding: 20px 0 32px;
 }
 .dir-card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 24px;
-  cursor: pointer;
-  transition: all 0.25s;
-  text-decoration: none;
-  display: block;
+  background: #1e293b; border: 1px solid #334155; border-radius: 12px;
+  padding: 24px; transition: all 0.25s;
 }
-.dir-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-}
+.dir-card:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
 .dir-card .icon { font-size: 28px; margin-bottom: 10px; }
 .dir-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
 .dir-card p { font-size: 12px; color: #64748b; line-height: 1.5; }
 .dir-card .tag {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 10px;
-  padding: 2px 8px;
-  border-radius: 10px;
+  display: inline-block; margin-top: 10px; font-size: 10px;
+  padding: 2px 8px; border-radius: 10px;
 }
 .dir-card.d1:hover { border-color: #34d399; }
 .dir-card.d1 .tag { background:#065f46; color:#34d399; }
@@ -131,117 +66,42 @@ body {
 .dir-card.d4 .tag { background:#431407; color:#fb923c; }
 .dir-card.d5:hover { border-color: #38bdf8; }
 .dir-card.d5 .tag { background:#0c1929; color:#38bdf8; }
+.dir-card.d6:hover { border-color: #fbbf24; }
+.dir-card.d6 .tag { background:#422006; color:#fbbf24; }
 .dir-card .card-links {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #1e293b;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  margin-top: 14px; padding-top: 14px; border-top: 1px solid #1e293b;
+  display: flex; flex-wrap: wrap; gap: 4px;
 }
 .dir-card .card-mo-link {
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: inline-block;
+  font-size: 10px; padding: 2px 7px; border-radius: 10px;
+  text-decoration: none; transition: all 0.2s; display: inline-block; line-height: 1.6;
 }
-.card-mo-link.active {
-  background: #1e3a5f;
-  color: #93c5fd;
-  border: 1px solid #3b82f6;
-}
+.card-mo-link.active { background: #1e3a5f; color: #93c5fd; border: 1px solid #3b82f6; }
 .card-mo-link.active:hover { background: #1e4a7f; }
-.card-mo-link.upcoming {
-  background: transparent;
-  color: #475569;
-  border: 1px dashed #334155;
-}
+.card-mo-link.upcoming { background: transparent; color: #334155; border: 1px dashed #1e293b; }
 .dir-card.d1 .card-mo-link.active { border-color: #34d399; color: #34d399; background: #065f46; }
 .dir-card.d2 .card-mo-link.active { border-color: #f472b6; color: #f472b6; background: #701a75; }
 .dir-card.d3 .card-mo-link.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
 .dir-card.d4 .card-mo-link.active { border-color: #fb923c; color: #fb923c; background: #431407; }
 .dir-card.d5 .card-mo-link.active { border-color: #38bdf8; color: #38bdf8; background: #0c1929; }
 .dir-card.d6 .card-mo-link.active { border-color: #fbbf24; color: #fbbf24; background: #422006; }
-
-/* ====== ARCHIVE ====== */
-.archive {
-  padding: 0 0 48px;
-}
-.year-block {
-  margin-bottom: 24px;
-}
+.archive { padding: 0 0 48px; }
+.year-block { margin-bottom: 28px; }
 .year-header {
-  font-size: 20px;
-  font-weight: 700;
-  color: #e2e8f0;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #1e293b;
+  font-size: 18px; font-weight: 700; color: #64748b; margin-bottom: 10px;
+  padding-bottom: 8px; border-bottom: 1px solid #1e293b;
 }
-.month-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 8px;
+.archive .empty {
+  font-size: 12px; color: #475569; padding: 12px 0; font-style: italic;
 }
-.month-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 14px;
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #cbd5e1;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-.month-link:hover {
-  background: #334155;
-  border-color: #60a5fa;
-  color: #e2e8f0;
-}
-.month-link .mo {
-  font-size: 11px;
-  color: #64748b;
-  font-weight: 400;
-  margin-left: auto;
-}
-.month-link.active {
-  background: #1e3a5f;
-  border-color: #3b82f6;
-  color: #93c5fd;
-}
-.month-link.upcoming {
-  opacity: 0.35;
-  pointer-events: none;
-}
-.month-link .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #34d399;
-  flex-shrink: 0;
-}
-
-/* ====== FOOTER ====== */
 .footer {
-  text-align: center;
-  padding: 24px;
-  border-top: 1px solid #1e293b;
-  font-size: 11px;
-  color: #475569;
+  text-align: center; padding: 24px; border-top: 1px solid #1e293b;
+  font-size: 11px; color: #475569;
 }
 .footer a { color: #60a5fa; text-decoration: none; }
-
-/* ====== RESPONSIVE ====== */
 @media (max-width: 640px) {
   .hero { padding: 40px 16px 32px; }
   .directions { grid-template-columns: 1fr; }
-  .month-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -266,84 +126,103 @@ body {
     <div class="line"></div>
   </div>
   <div class="directions">
-    <!-- ESG -->
+
     <div class="dir-card d1">
       <div class="icon">🌱</div>
       <h3>ESG与可持续发展</h3>
       <p>绿色债券、气候金融、企业社会责任、环境治理</p>
       <span class="tag">ESG</span>
       <div class="card-links">
-        <a href="2026/06/#esg" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#esg" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
-    <!-- M&A -->
+
     <div class="dir-card d2">
       <div class="icon">💼</div>
       <h3>资产并购</h3>
       <p>私募股权、并购合同、收购防御策略、审计商业化</p>
       <span class="tag">M&A</span>
       <div class="card-links">
-        <a href="2026/06/#ma" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#ma" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
-    <!-- AI Marketing -->
+
     <div class="dir-card d3">
       <div class="icon">🤖</div>
       <h3>AI营销与数智营销</h3>
       <p>个性化推荐、AI零售、消费者偏好建模、人机协作购物</p>
       <span class="tag">AI Marketing</span>
       <div class="card-links">
-        <a href="2026/06/#ai-marketing" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#ai-marketing" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
-    <!-- Health -->
+
     <div class="dir-card d4">
       <div class="icon">🏥</div>
       <h3>健康信息管理</h3>
       <p>移动健康、医疗IT整合、可穿戴设备、慢病管理</p>
       <span class="tag">Health IT</span>
       <div class="card-links">
-        <a href="2026/06/#health" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#health" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
-    <!-- Supply Chain -->
+
     <div class="dir-card d5">
       <div class="icon">📦</div>
       <h3>供应链运用与管理</h3>
       <p>供应链协调、库存优化、金融冲击传导、流行病建模</p>
       <span class="tag">Supply Chain</span>
       <div class="card-links">
-        <a href="2026/06/#supply-chain" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#supply-chain" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
-    <!-- HR -->
+
     <div class="dir-card d6">
       <div class="icon">👥</div>
       <h3>AI环境下的人力资源管理</h3>
       <p>AI团队协作、性别平等、危机领导力、全球人才</p>
       <span class="tag">AI + HR</span>
       <div class="card-links">
-        <a href="2026/06/#hr" class="card-mo-link active">2026年6月</a>
-        <span class="card-mo-link upcoming">5月</span><span class="card-mo-link upcoming">4月</span>
-        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">2月</span>
-        <span class="card-mo-link upcoming">1月</span>
+        <span class="card-mo-link upcoming">1月</span><span class="card-mo-link upcoming">2月</span>
+        <span class="card-mo-link upcoming">3月</span><span class="card-mo-link upcoming">4月</span>
+        <span class="card-mo-link upcoming">5月</span>
+        <a href="2026/06/#hr" class="card-mo-link active">6月</a>
+        <span class="card-mo-link upcoming">7月</span><span class="card-mo-link upcoming">8月</span>
+        <span class="card-mo-link upcoming">9月</span><span class="card-mo-link upcoming">10月</span>
+        <span class="card-mo-link upcoming">11月</span><span class="card-mo-link upcoming">12月</span>
       </div>
     </div>
+
   </div>
 
   <!-- ====== 往期简报 ====== -->
@@ -353,18 +232,12 @@ body {
   </div>
   <div class="archive">
     <div class="year-block">
-      <div class="year-header">2026 年</div>
-      <div class="month-grid">
-        <a href="2026/06/" class="month-link active">
-          <span class="dot"></span> 6月
-          <span class="mo">27篇</span>
-        </a>
-        <a href="2026/05/" class="month-link upcoming">5月<span class="mo">即将发布</span></a>
-        <a href="2026/04/" class="month-link upcoming">4月<span class="mo">即将发布</span></a>
-        <a href="2026/03/" class="month-link upcoming">3月<span class="mo">即将发布</span></a>
-        <a href="2026/02/" class="month-link upcoming">2月<span class="mo">即将发布</span></a>
-        <a href="2026/01/" class="month-link upcoming">1月<span class="mo">即将发布</span></a>
-      </div>
+      <div class="year-header">2025 年</div>
+      <div class="empty">暂无数据，科研简报始于2026年</div>
+    </div>
+    <div class="year-block">
+      <div class="year-header">2024 年</div>
+      <div class="empty">暂无数据</div>
     </div>
   </div>
 
