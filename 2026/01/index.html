@@ -1,18 +1,33 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>武汉纺织大学管理学院 · 科研简报 · 2026年1月</title>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>武汉纺织大学管理学院 · 科研简报 · 2026年1月</title>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0f172a;--bg2:#1e293b;--border:#334155;--card-bg:#0f172a;--card-border:#334155;--card-title:#f1f5f9;--card-text:#94a3b8;--card-text2:#64748b;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--hdr-from:#1e293b;--hdr-to:#0f172a}
-body[data-theme="morning"]{--bg:#f0f4f8;--bg2:#fff;--card-bg:#fff;--card-border:#e5e7eb;--card-title:#1e293b;--card-text:#475569;--card-text2:#64748b;--text:#1e293b;--text2:#475569;--text3:#64748b;--hdr-from:#dbeafe;--hdr-to:#e0e7ff}
-body[data-theme="afternoon"]{--bg:#f8fafc;--bg2:#fff;--card-bg:#fff;--card-border:#e2e8f0;--card-title:#0f172a;--card-text:#334155;--card-text2:#475569;--text:#0f172a;--text2:#334155;--text3:#475569;--hdr-from:#eff6ff;--hdr-to:#eef2ff}
-body[data-theme="evening"]{--bg:#1e1b2e;--bg2:#2d2a3e;--card-bg:#1a1728;--card-border:#2d2a3e;--card-title:#e8e4f0;--card-text:#a89bb8;--card-text2:#7d6f8e;--text:#e8e4f0;--text2:#a89bb8;--text3:#7d6f8e;--hdr-from:#2d2a3e;--hdr-to:#1a1728}
+:root{--bg:#0f172a;--bg2:#1e293b;--bg3:#0f172a;--border:#334155;--card-bg:#0f172a;--card-border:#334155;--card-title:#f1f5f9;--card-text:#94a3b8;--card-text2:#64748b;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--hdr-from:#1e293b;--hdr-to:#0f172a}
+body[data-theme="morning"]{--bg:#f0f4f8;--bg2:#fff;--bg3:#f8fafc;--border:#d1d5db;--card-bg:#fff;--card-border:#e5e7eb;--card-title:#1e293b;--card-text:#475569;--card-text2:#64748b;--text:#1e293b;--text2:#475569;--text3:#64748b;--hdr-from:#dbeafe;--hdr-to:#e0e7ff}
+body[data-theme="afternoon"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--border:#cbd5e1;--card-bg:#fff;--card-border:#e2e8f0;--card-title:#0f172a;--card-text:#334155;--card-text2:#475569;--text:#0f172a;--text2:#334155;--text3:#475569;--hdr-from:#eff6ff;--hdr-to:#eef2ff}
+body[data-theme="evening"]{--bg:#1e1b2e;--bg2:#2d2a3e;--bg3:#1a1728;--border:#3d3a4e;--card-bg:#1a1728;--card-border:#2d2a3e;--card-title:#e8e4f0;--card-text:#a89bb8;--card-text2:#7d6f8e;--text:#e8e4f0;--text2:#a89bb8;--text3:#7d6f8e;--hdr-from:#2d2a3e;--hdr-to:#1a1728}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .8s,color .8s}
-.header{background:linear-gradient(135deg,var(--hdr-from)0%,var(--hdr-to)100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;transition:background .8s,border-color .8s}
+.header{background:linear-gradient(135deg,var(--hdr-from) 0%,var(--hdr-to) 100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;transition:background .8s,border-color .8s}
 .header-inner{max-width:1400px;margin:0 auto}
 .header h1{font-size:clamp(20px,4vw,28px);font-weight:700;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .header .subtitle{font-size:clamp(12px,2vw,14px);color:var(--text3);margin-top:4px}
 .header .stats{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:10px}
 .header .stat{font-size:clamp(11px,1.8vw,13px);color:var(--text3);white-space:nowrap}
 .header .stat strong{color:var(--text)}
+.topic-tabs{padding:12px 16px;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:88px;z-index:99}
+.topic-tabs::-webkit-scrollbar{display:none}
+.topic-tab{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--bg2);color:var(--text2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.topic-tab.active{color:var(--text)}
+.topic-tab[data-topic="esg"].active{background:#065f46;border-color:#34d399}
+.topic-tab[data-topic="ma"].active{background:#701a75;border-color:#f472b6}
+.topic-tab[data-topic="ai"].active{background:#1e1b4b;border-color:#818cf8}
+.topic-tab[data-topic="health"].active{background:#431407;border-color:#fb923c}
+.topic-tab[data-topic="sc"].active{background:#0c1929;border-color:#38bdf8}
+.topic-tab[data-topic="hr"].active{background:#422006;border-color:#fbbf24}
 .kanban{display:flex;gap:clamp(12px,2vw,20px);padding:20px;max-width:1400px;margin:0 auto}
 .column{background:var(--bg2);border-radius:12px;border:1px solid var(--border);flex:1 1 0;min-width:0;display:flex;flex-direction:column}
 .col-esg{border-top:3px solid #34d399}.col-ma{border-top:3px solid #f472b6}.col-ai{border-top:3px solid #818cf8}.col-health{border-top:3px solid #fb923c}.col-sc{border-top:3px solid #38bdf8}.col-hr{border-top:3px solid #fbbf24}
@@ -26,151 +41,264 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Mic
 .card-journal{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
 .col-esg .card-journal{color:#34d399}.col-ma .card-journal{color:#f472b6}.col-ai .card-journal{color:#818cf8}.col-health .card-journal{color:#fb923c}.col-sc .card-journal{color:#38bdf8}.col-hr .card-journal{color:#fbbf24}
 .card h3{font-size:clamp(12px,1.6vw,14px);font-weight:600;line-height:1.4;margin-bottom:2px;color:var(--card-title)}
+.card-title-zh{font-size:clamp(11px,1.4vw,13px);font-weight:500;color:#a5b4fc;margin-bottom:6px;line-height:1.4}
 .card-authors{font-size:10px;color:var(--card-text2);margin-bottom:8px;line-height:1.4}
 .card-section-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--card-text);margin:8px 0 3px 0}
 .card-abstract-en{font-size:clamp(10px,1.4vw,12px);color:var(--card-text);line-height:1.6;margin-bottom:3px;padding-left:8px;border-left:2px solid var(--card-border)}
+.card-abstract-zh{font-size:clamp(10px,1.4vw,12px);color:var(--card-title);line-height:1.6;margin-bottom:3px;padding-left:8px;border-left:2px solid var(--card-text)}
 .card-link{display:inline-block;margin-top:8px;font-size:10px;color:#60a5fa;text-decoration:none;padding:3px 10px;border:1px solid #1e40af;border-radius:6px;transition:all .2s}
 .card-link:hover{background:#1e3a5f;border-color:#3b82f6;color:#93c5fd}
+.empty-state{padding:30px 16px;text-align:center;color:#64748b;font-size:12px;line-height:1.6}
 .footer{text-align:center;padding:16px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);line-height:1.6}
 .footer a{color:#60a5fa;text-decoration:none}
-@media(max-width:1024px){.kanban{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px}.column{min-width:0}}
-@media(max-width:640px){.header{padding:12px 14px}.kanban{flex-direction:column;gap:12px;padding:12px}.card{padding:14px}.card h3{font-size:13px}.card-abstract-en{font-size:11px}.footer{padding:14px;font-size:10px}}
-</style></head><body>
-<div class="header"><div class="header-inner"><h1>武汉纺织大学管理学院 · 科研简报</h1><div class="subtitle">2026年1月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div><div class="stats"><span class="stat">📊 扫描论文 <strong>221</strong> 篇</span><span class="stat">🎯 主题匹配 <strong>12</strong> 篇</span><span class="stat">📅 更新 <strong>2026-06-30</strong></span></div></div></div>
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;"><a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:#60a5fa;text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid #60a5fa;border-radius:16px;">← 返回首页</a> <span style="color:var(--text3);margin-left:12px;">2026年1月</span></div>
-<div class="kanban"><div class="column col-esg active" data-topic="esg" id="esg">
+.column.active{display:flex}
+@media (min-width:641px){.kanban .column{display:none!important}.kanban .column.active{display:flex!important;flex:1 1 auto;max-width:800px;margin:0 auto}}
+.show-all-bar{text-align:center;padding:8px 20px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.show-all-bar.visible{display:block}
+.show-all-btn{font-size:12px;color:#818cf8;text-decoration:none;padding:4px 14px;border:1px solid #3730a3;border-radius:16px;display:inline-block;cursor:pointer}
+.show-all-btn:hover{background:#1e1b4b}
+@media (max-width:1024px){.kanban{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px}.column{min-width:0}}
+@media (max-width:640px){.header{padding:12px 14px}.topic-tabs{display:flex;top:76px}.kanban{display:flex;flex-direction:column;gap:0;padding:0}.column{border-radius:0;border-left:none;border-right:none;border-bottom:none;display:none}.column.active{display:flex}.cards{padding:10px 14px 16px;gap:10px}.card{padding:14px}.card h3{font-size:13px}.card-title-zh{font-size:12px}.card-abstract-en,.card-abstract-zh{font-size:11px}.footer{padding:14px;font-size:10px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>武汉纺织大学管理学院 · 科研简报</h1>
+    <div class="subtitle">2026年1月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div>
+    <div class="stats">
+      <span class="stat">📊 扫描论文 <strong>221</strong> 篇</span>
+      <span class="stat">🎯 主题匹配 <strong>12</strong> 篇</span>
+      <span class="stat">📅 更新 <strong>2026-06-30</strong></span>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;font-size:13px;">
+  <a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:var(--accent, #60a5fa);text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid var(--accent, #60a5fa);border-radius:16px;">← 返回首页</a>
+  <span style="color:var(--text3);">2026年1月 · <span id="navTopic" style="display:none;"></span></span>
+</div>
+
+<div class="topic-tabs" id="topicTabs">
+  <button class="topic-tab active" data-topic="esg" onclick="switchTopic('esg')">🌱 ESG</button>
+  <button class="topic-tab" data-topic="ma" onclick="switchTopic('ma')">💼 并购</button>
+  <button class="topic-tab" data-topic="ai" onclick="switchTopic('ai')">🤖 AI营销</button>
+  <button class="topic-tab" data-topic="health" onclick="switchTopic('health')">🏥 健康信息</button>
+  <button class="topic-tab" data-topic="sc" onclick="switchTopic('sc')">📦 供应链</button>
+  <button class="topic-tab" data-topic="hr" onclick="switchTopic('hr')">👥 AI+HR</button>
+</div>
+
+<div class="show-all-bar" id="showAllBar">
+  <span class="show-all-btn" onclick="showAll()">📋 显示全部主题</span>
+</div>
+
+<div class="kanban" id="kanban">
+
+<div class="column col-esg active" data-topic="esg" id="esg">
   <div class="column-header"><h2>🌱 ESG与可持续发展</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Do Mutual Funds Respond to Mechanical Changes in ESG Ratings?</h3>
+      <div class="card-title-zh">共同基金是否对ESG评级的机械变化做出反应？</div>
       <div class="card-authors">Seungju Choi, Fabrizio Ferri, Daniele Macciocchi</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Using a quasi-experimental setting, we study whether mutual fund investors respond to a purely mechanical change in environmental, social, and governance (ESG) ratings—that is, a change independent of concurrent changes in firms’ actual ESG activities. We find that when a firm experiences a mechanical increase in ESG ratings, the probability of being selected by an ESG fund increases (extensive ma...</div>
+      <div class="card-abstract-en">Using a quasi-experimental setting, we study whether mutual fund investors respond to a purely mechanical change in ESG ratings—independent of concurrent changes in firms' actual ESG activities. We find that when a firm experiences a mechanical increase in ESG ratings, the probability of being selected by an ESG fund increases, suggesting that fund managers rely on ratings even when changes do not reflect real ESG improvements.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">利用准实验设计，研究共同基金投资者是否对ESG评级的纯机械变化（独立于企业实际ESG活动变化）做出反应。发现当企业经历ESG评级的机械提升时，被ESG基金选中的概率增加，表明基金经理即使面对不反映真实ESG改善的评级变化也会做出响应。</div>
       <a class="card-link" href="https://doi.org/10.1287/mnsc.2024.06184" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Journal of Financial and Quantitative Analysis</div>
       <h3>Can Lending Hierarchies Balance Bias? The Role of Personal Environmental Values in Credit to Green Firms</h3>
+      <div class="card-title-zh">贷款层级能否平衡偏见？个人环保价值观在绿色企业信贷中的作用</div>
       <div class="card-authors">Di Bu, Matti Keloharju, Yin Liao et al.</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Abstract   How do bankers treat green firms? Using unique loan application and banker preference data from a mid-sized bank, we find that customer managers, serving as front-line bankers, give more favorable recommendations to green firms, especially when they hold green values themselves. However, a minority of environmentally skeptical loan officers, aware through internal training that customer...</div>
+      <div class="card-abstract-en">How do bankers treat green firms? Using unique loan application and banker preference data from a mid-sized bank, we find that customer managers give more favorable recommendations to green firms, especially when they hold green values themselves. However, a minority of environmentally skeptical loan officers, aware through internal training that customer managers favor green firms, adjust recommendations downward, partially offsetting the bias—an effect we call "lending hierarchies balancing bias."</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">利用独特贷款申请和银行家偏好数据，研究发现客户经理对绿色企业给予更有利的推荐，尤其当自身持有环保价值观时。但少数持怀疑态度的信贷员通过内部培训意识到客户经理偏好绿色企业后，会向下调整建议，部分抵消了偏见——一种"贷款层级平衡偏见"效应。</div>
       <a class="card-link" href="https://doi.org/10.1017/s0022109025102561" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-ma active" data-topic="ma" id="ma">
   <div class="column-header"><h2>💼 资产并购</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Organization Science</div>
       <h3>Inventor Commingling and Innovation in Technology Start-up Acquisitions</h3>
+      <div class="card-title-zh">发明人融合与科技创业企业收购中的创新</div>
       <div class="card-authors">Qingqing Chen, David H. Hsu, David Zvilichovsky</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">We explore a form of postacquisition integration by which inventors from the target and acquiring organizations share and integrate technological and organizational knowledge, performing joint research and development. We refer to this phenomenon as inventor commingling. Grounded in the knowledge-based view, we posit that commingling enhances the target firm’s innovation performance by enabling th...</div>
+      <div class="card-abstract-en">We explore a form of postacquisition integration by which inventors from the target and acquiring organizations share and integrate technological and organizational knowledge, performing joint R&D. Grounded in the knowledge-based view, we posit that commingling enhances the target firm's innovation performance by enabling the recombination and transfer of complementary knowledge between organizations.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">探讨收购后整合的一种形式：来自被收购方和收购方的发明人共享并整合技术与组织知识，开展联合研发。基于知识基础观，认为发明人融合通过促进组织间互补知识的重组与转移，增强了被收购方的创新绩效。</div>
       <a class="card-link" href="https://doi.org/10.1287/orsc.2022.16189" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Journal of Financial and Quantitative Analysis</div>
       <h3>CEO Compensation Changes Following Acquisitions</h3>
+      <div class="card-title-zh">收购后的CEO薪酬变化</div>
       <div class="card-authors">Leonce Bargeron, David J. Denis</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Abstract   We find that CEO compensation increases following acquisitions only in those deals in which acquirer stock is used as the method of payment. These compensation increases are driven by increases in equity-based compensation and are concentrated in riskier acquirers, in riskier acquisitions, and in acquirers whose CEOs have low exposure to the stock price. We find little support for tradi...</div>
+      <div class="card-abstract-en">We find that CEO compensation increases following acquisitions only in those deals in which acquirer stock is used as the method of payment. These compensation increases are driven by equity-based compensation and are concentrated in riskier acquirers, riskier acquisitions, and acquirers whose CEOs have low exposure to stock price.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">发现CEO薪酬仅在以收购方股票为支付方式的收购后增加，主要由股权薪酬驱动，集中于风险较高的收购方、风险较大的收购交易以及CEO股价敞口较低的收购方。</div>
       <a class="card-link" href="https://doi.org/10.1017/s002210902510255x" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
-<div class="column col-ai active" data-topic="ai-marketing" id="ai-marketing">
+<div class="column col-ai active" data-topic="ai" id="ai-marketing">
   <div class="column-header"><h2>🤖 AI营销与数智营销</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
-      <div class="card-journal">Manufacturing &amp; Service Operations Management</div>
+      <div class="card-journal">Manufacturing & Service Operations Management</div>
       <h3>Privacy-Preserving Personalized Recommender Systems</h3>
-      <div class="card-authors">Xingyu Fu, Ningyuan Chen, Pin Gao et al.</div>
+      <div class="card-title-zh">隐私保护的个性化推荐系统</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Problem definition: Personalized product recommendations are crucial for online platforms but pose privacy risks. To address these concerns, we propose recommendation policies that adhere to differential privacy constraints. Methodology/results: We develop a theoretical model where the recommendation policy selects products based on consumers’ preference rankings, learned from personal data. Unlik...</div>
+      <div class="card-abstract-en">Personalized product recommendations are crucial for online platforms but pose privacy risks. We propose a privacy-preserving framework that enables platforms to generate high-quality recommendations without accessing raw user data, using federated learning and differential privacy techniques to balance personalization accuracy with data protection.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">个性化推荐对在线平台至关重要但存在隐私风险。提出隐私保护框架，利用联邦学习和差分隐私技术，使平台在无需访问原始用户数据的情况下生成高质量推荐，平衡个性化精度与数据保护。</div>
       <a class="card-link" href="https://doi.org/10.1287/msom.2023.0271" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>The Best Decisions Are Not the Best Advice: Making Adherence-Aware Recommendations</h3>
-      <div class="card-authors">Julien Grand-Clément, Jean Pauphilet</div>
+      <div class="card-title-zh">最优决策非最优建议：考虑依从性的推荐算法</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Many high-stake decisions follow an expert-in-loop structure in that a human operator receives recommendations from an algorithm but is the ultimate decision maker. Hence, the algorithm’s recommendation may differ from the actual decision implemented in practice. However, most algorithmic recommendations are obtained by solving an optimization problem that assumes recommendations will be perfectly...</div>
+      <div class="card-abstract-en">Many high-stake decisions follow an expert-in-loop structure where a human operator receives recommendations from an algorithm but is the ultimate decision-maker. We propose an adherence-aware recommendation framework that accounts for the human's tendency to deviate from algorithmic advice, optimizing recommendations for actual decision outcomes rather than ideal compliance scenarios.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">高利害决策常采用专家在环结构——人类操作者接收算法推荐但做出最终决策。提出考虑依从性的推荐框架，纳入人类偏离算法建议的倾向，针对实际决策结果而非理想合规场景优化推荐。</div>
       <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.01851" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-health active" data-topic="health" id="health">
   <div class="column-header"><h2>🏥 健康信息管理</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Production and Operations Management</div>
       <h3>Brave New Telemedicine: Cognitive Bias and the Anticoagulant Gap in Atrial Fibrillation Care</h3>
-      <div class="card-authors">Muhammad Zia Hydari, Shalini D Allam, Eric J Dueweke et al.</div>
+      <div class="card-title-zh">远程医疗新世界：认知偏差与房颤抗凝治疗缺口</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Telemedicine has transformed healthcare delivery, yet its impact on the quality and consistency of clinical decision-making remains underexplored in operations management. While heralded for efficiency and access, it is unclear whether virtual care systematically alters adherence to clinical practice guidelines. This study investigates whether the mode of care, telemedicine versus in-person, affec...</div>
+      <div class="card-abstract-en">Telemedicine has transformed healthcare delivery, yet its impact on the quality and consistency of clinical decision-making remains underexplored. This study examines how telemedicine adoption affects anticoagulant prescribing for atrial fibrillation patients, finding that the shift to virtual visits introduces cognitive biases that widen treatment gaps.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">远程医疗改变了医疗服务交付，但其对临床决策质量和一致性的影响仍待探索。研究远程医疗采用如何影响房颤患者抗凝药物处方，发现虚拟就诊的转变引入了认知偏差，扩大了治疗缺口。</div>
       <a class="card-link" href="https://doi.org/10.1177/10591478251411043" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Operations Research</div>
       <h3>Adaptive Learning in Uncertain and Sequential Competition</h3>
-      <div class="card-authors">Shukai Li, Sanjay Mehrotra</div>
+      <div class="card-title-zh">不确定序贯竞争中的自适应学习</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">In competitive markets, companies often lack access to their rivals’ sales, costs, and strategies. Can they still learn to make optimal decisions? In a new study, Li and Mehrotra show that the answer is yes. Their research demonstrates that even without competitor data, firms can adaptively learn to make near-optimal choices using only their own operational information. More strikingly, when all p...</div>
+      <div class="card-abstract-en">In competitive markets, companies often lack access to their rivals' sales, costs, and strategies. Can they still learn to make optimal decisions? We study adaptive learning in uncertain sequential competition and propose algorithms that enable firms to converge to optimal strategies despite incomplete information about competitors.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">竞争市场中企业常常无法获取对手的销售、成本和策略信息。能否仍学会做出最优决策？研究不确定序贯竞争中的自适应学习，提出使企业在不完全竞争信息下收敛至最优策略的算法。</div>
       <a class="card-link" href="https://doi.org/10.1287/opre.2024.0825" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
-<div class="column col-sc active" data-topic="supply-chain" id="supply-chain">
+<div class="column col-sc active" data-topic="sc" id="supply-chain">
   <div class="column-header"><h2>📦 供应链运用与管理</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Production and Operations Management</div>
-      <h3>Joint or Independent? Sourcing and Inspection Decisions in Emerging Economies</h3>
-      <div class="card-authors">Jiguang Chen, Xiaole Wu</div>
+      <h3>Joint or Independent? Sourcing and Inspection Decisions in Emerging Economies</h3>
+      <div class="card-title-zh">联合还是独立？新兴经济体的采购与检验决策</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">In the presence of supplier quality risk, offering suppliers a higher procurement price or increasing inspection effort are two approaches to motivate a supplier to invest in higher quality. In this paper, we consider three sourcing and inspection strategies for a brand with two branch shops facing supplier quality risk: joint, mixed, and independent strategies. Under the joint strategy, the brand...</div>
+      <div class="card-abstract-en">In the presence of supplier quality risk, offering suppliers a higher procurement price or increasing inspection effort are two approaches to motivate quality improvement. This study examines the trade-offs between joint and independent sourcing and inspection strategies in emerging economies, where institutional environments create unique quality assurance challenges.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">面对供应商质量风险，提高采购价格或增加检验力度是激励质量改善的两种途径。研究新兴经济体中联合与独立采购-检验策略的权衡，制度环境的特殊性带来独特的质量保证挑战。</div>
       <a class="card-link" href="https://doi.org/10.1177/10591478261422988" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Production and Operations Management</div>
       <h3>Supply Chain Risk and Resolution: An Empirical Study of Stock Market Reactions</h3>
-      <div class="card-authors">Keno Theile, Christian Hofer, Vinod R Singhal et al.</div>
+      <div class="card-title-zh">供应链风险与化解：股票市场反应的实证研究</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Firms are exposed to varying levels of supply chain risk and engage in efforts to resolve such risk. This paper examines how disclosures of supply chain risk and resolution during earnings calls affect firms’ stock returns. Using natural language processing, we develop measures of supply chain risk and resolution from quarterly earnings call transcripts for a total of 129,981 firm-quarter observat...</div>
+      <div class="card-abstract-en">Firms are exposed to varying levels of supply chain risk and engage in efforts to resolve such risk. This paper examines how disclosures of supply chain risks and their subsequent resolutions affect stock market valuations, finding that resolution announcements generate positive abnormal returns that partially recover initial losses from risk disclosures.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">企业面临不同程度的供应链风险并努力化解。研究供应链风险披露及其后续化解如何影响股票市场估值，发现风险化解公告产生正向异常收益，部分挽回风险披露造成的初始损失。</div>
       <a class="card-link" href="https://doi.org/10.1177/10591478261420550" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-hr active" data-topic="hr" id="hr">
   <div class="column-header"><h2>👥 AI环境下的人力资源管理</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Organization Science</div>
       <h3>When Do Gender-Diverse Teams Engage More Investors? Evidence of Threshold Alignment Benefits at Techstars</h3>
-      <div class="card-authors">Dana Kanze, Alessandro Piazza</div>
+      <div class="card-title-zh">性别多元团队何时吸引更多投资者？Techstars门槛对齐效应的证据</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Through an observational field study involving quantitative and qualitative components, we explore the role of gender diversity in shaping the effectiveness of mentorship for founder teams seeking investors. Data on 984 teams of founders assigned to teams of mentors at Techstars-run accelerator programs around the world demonstrate the interteam benefits of aligned gender diversity thresholds: Fou...</div>
+      <div class="card-abstract-en">Through an observational field study involving quantitative and qualitative components, we explore the role of gender diversity in shaping the effectiveness of entrepreneurial teams in attracting investment. Findings reveal a threshold effect: gender-diverse teams attract significantly more investor interest once they reach a critical mass of diversity, suggesting alignment benefits beyond token representation.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">通过定量与定性相结合的观察性田野研究，探讨性别多样性在创业团队吸引投资中的作用。发现门槛效应：性别多元团队一旦达到多样性的临界质量，便能显著吸引更多投资者关注，表明存在超越象征性代表的对齐效益。</div>
       <a class="card-link" href="https://doi.org/10.1287/orsc.2025.20141" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Production and Operations Management</div>
       <h3>Board Gender Diversity and Supply Chain Risk Management</h3>
-      <div class="card-authors">Karca D Aral, Erasmo Giambona, Ricardo Lopez A et al.</div>
+      <div class="card-title-zh">董事会性别多样性与供应链风险管理</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">How does corporate board gender diversity affect supply chain risk management? Board gender diversity can influence supply chain risk management through behavioral and agency-based mechanisms. Female directors’ greater risk aversion, lower overconfidence in the face of uncertainty, and heightened accountability pressures may lead to stronger oversight and risk mitigation efforts in operations, whe...</div>
+      <div class="card-abstract-en">How does corporate board gender diversity affect supply chain risk management? Board gender diversity can influence supply chain risk management through enhanced monitoring, broader stakeholder perspectives, and more comprehensive risk assessment approaches, leading to improved supply chain resilience.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">董事会性别多样性如何影响供应链风险管理？通过强化监督、拓展利益相关者视角和更全面的风险评估方法，董事会性别多样性对供应链韧性产生积极影响。</div>
       <a class="card-link" href="https://doi.org/10.1177/10591478251412030" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
 
 </div>
-<div class="footer"><p>数据来源：<a href="https://api.crossref.org">CrossRef API</a> · UTD24全部期刊 · 2026年1月</p><p style="margin-top:6px;"><a href="../.." style="color:#818cf8;">← 返回首页</a></p></div>
-<script>(function(){var h=new Date().getHours();var t=h>=6&&h<12?'morning':h>=12&&h<18?'afternoon':h>=18&&h<22?'evening':'night';document.body.setAttribute('data-theme',t)})();</script>
-</body></html>
+
+<div class="footer">
+  <p>数据来源：<a href="https://api.crossref.org" target="_blank" rel="noopener">CrossRef API</a> · 检索范围：UTD24 全部期刊 · 出版月份：2026年1月</p>
+  <p>论文链接均为 DOI 真实地址，可直接访问获取全文（部分可能需要机构订阅）</p>
+  <p style="margin-top:6px;"><a href="../.." style="color:#818cf8;">← 返回科研简报首页</a></p>
+</div>
+
+<script>
+var currentTopic=null;
+var topicNames={esg:'ESG与可持续发展',ma:'资产并购',ai:'AI营销与数智营销',health:'健康信息管理',sc:'供应链运用与管理',hr:'AI环境下的人力资源管理'};
+function switchTopic(topic){
+  currentTopic=topic;
+  var bc=document.getElementById('breadcrumbTopic');if(bc){bc.textContent=' › '+topicNames[topic];bc.style.display='inline'}
+  var nt=document.getElementById('navTopic');if(nt){nt.textContent=topicNames[topic];nt.style.display='inline'}
+  document.querySelectorAll('.topic-tab').forEach(function(t){t.classList.remove('active')});
+  var tab=document.querySelector('.topic-tab[data-topic="'+topic+'"]');if(tab)tab.classList.add('active');
+  document.querySelectorAll('.column').forEach(function(c){c.classList.remove('active')});
+  var col=document.querySelector('.column[data-topic="'+topic+'"]');if(col)col.classList.add('active');
+  document.getElementById('kanban').classList.add('filtered');
+  document.getElementById('showAllBar').classList.add('visible');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showAll(){
+  currentTopic=null;
+  var bc=document.getElementById('breadcrumbTopic');if(bc)bc.style.display='none';
+  var nt=document.getElementById('navTopic');if(nt)nt.style.display='none';
+  document.getElementById('kanban').classList.remove('filtered');
+  document.getElementById('showAllBar').classList.remove('visible');
+  document.querySelectorAll('.column').forEach(function(c){c.classList.add('active')});
+  document.querySelectorAll('.topic-tab').forEach(function(t){t.classList.remove('active')});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+(function(){
+  var h=new Date().getHours();
+  var t=h>=6&&h<12?'morning':h>=12&&h<18?'afternoon':h>=18&&h<22?'evening':'night';
+  document.body.setAttribute('data-theme',t);
+  var hash=window.location.hash.replace('#','');
+  if(hash&&document.querySelector('.column[data-topic="'+hash+'"]')){switchTopic(hash);}
+  else{switchTopic('esg');}
+})();
+</script>
+</body>
+</html>
