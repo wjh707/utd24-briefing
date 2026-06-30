@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>武汉纺织大学管理学院 · 科研简报 · 2026年6月</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ==================== BASE ==================== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-bottom: 1px solid #334155;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header .subtitle {
+  font-size: clamp(12px, 2vw, 14px);
+  color: #94a3b8;
+  margin-top: 4px;
+}
+.header .stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 10px;
+}
+.header .stat {
+  font-size: clamp(11px, 1.8vw, 13px);
+  color: #64748b;
+  white-space: nowrap;
+}
+.header .stat strong { color: #e2e8f0; }
+
+/* ==================== TOPIC SELECTOR (MOBILE) ==================== */
+.topic-tabs {
+  display: none;
+  padding: 12px 16px;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 88px;
+  z-index: 99;
+}
+.topic-tabs::-webkit-scrollbar { display: none; }
+.topic-tab {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.topic-tab.active { color: #e2e8f0; }
+.topic-tab[data-topic="esg"].active { background: #065f46; border-color: #34d399; }
+.topic-tab[data-topic="ma"].active { background: #701a75; border-color: #f472b6; }
+.topic-tab[data-topic="ai"].active { background: #1e1b4b; border-color: #818cf8; }
+.topic-tab[data-topic="health"].active { background: #431407; border-color: #fb923c; }
+.topic-tab[data-topic="sc"].active { background: #0c1929; border-color: #38bdf8; }
+.topic-tab[data-topic="hr"].active { background: #422006; border-color: #fbbf24; }
+
+/* ==================== KANBAN LAYOUT ==================== */
+.kanban {
+  display: flex;
+  gap: clamp(12px, 2vw, 20px);
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==================== COLUMNS ==================== */
+.column {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.col-esg { border-top: 3px solid #34d399; }
+.col-ma  { border-top: 3px solid #f472b6; }
+.col-ai  { border-top: 3px solid #818cf8; }
+.col-health { border-top: 3px solid #fb923c; }
+.col-sc  { border-top: 3px solid #38bdf8; }
+.col-hr  { border-top: 3px solid #fbbf24; }
+
+.column-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.column-header h2 {
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 600;
+}
+.col-esg .column-header h2 { color: #34d399; }
+.col-ma .column-header h2  { color: #f472b6; }
+.col-ai .column-header h2  { color: #818cf8; }
+.col-health .column-header h2 { color: #fb923c; }
+.col-sc .column-header h2  { color: #38bdf8; }
+.col-hr .column-header h2  { color: #fbbf24; }
+.column-header .count {
+  font-size: 11px;
+  background: #334155;
+  color: #94a3b8;
+  padding: 2px 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.cards {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: clamp(12px, 2vw, 16px);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.card:hover {
+  border-color: #475569;
+  transform: translateY(-1px);
+}
+.card-journal {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.col-esg .card-journal { color: #34d399; }
+.col-ma .card-journal  { color: #f472b6; }
+.col-ai .card-journal  { color: #818cf8; }
+.col-health .card-journal { color: #fb923c; }
+.col-sc .card-journal  { color: #38bdf8; }
+.col-hr .card-journal  { color: #fbbf24; }
+
+.card h3 {
+  font-size: clamp(12px, 1.6vw, 14px);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 2px;
+  color: #f1f5f9;
+}
+.card-title-zh {
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 500;
+  color: #a5b4fc;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.card-authors {
+  font-size: 10px;
+  color: #64748b;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.card-section-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #475569;
+  margin: 8px 0 3px 0;
+}
+.card-abstract-en {
+  font-size: clamp(10px, 1.4vw, 12px);
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 3px;
+  padding-left: 8px;
+  border-left: 2px solid #334155;
+}
+.card-abstract-zh {
+  font-size: clamp(10px, 1.4vw, 12px);
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 3px;
+  padding-left: 8px;
+  border-left: 2px solid #475569;
+}
+.card-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10px;
+  color: #60a5fa;
+  text-decoration: none;
+  padding: 3px 10px;
+  border: 1px solid #1e40af;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.card-link:hover { background: #1e3a5f; border-color: #3b82f6; color: #93c5fd; }
+
+/* ==================== EMPTY STATE ==================== */
+.empty-state {
+  padding: 30px 16px;
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.empty-state .icon { font-size: 28px; margin-bottom: 8px; }
+
+/* ==================== FOOTER ==================== */
+.footer {
+  padding: 16px 20px;
+  border-top: 1px solid #334155;
+  font-size: 11px;
+  color: #475569;
+  text-align: center;
+  line-height: 1.6;
+}
+.footer a { color: #60a5fa; text-decoration: none; }
+
+/* ==================== RESPONSIVE: Tablet (≤1024px) ==================== */
+@media (max-width: 1024px) {
+  .kanban {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  .column {
+    min-width: 0;
+  }
+}
+
+/* ==================== RESPONSIVE: Mobile (≤640px) ==================== */
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 14px;
+  }
+  .header .stats {
+    gap: 6px 14px;
+  }
+
+  .topic-tabs {
+    display: flex;
+    top: 76px;
+  }
+
+  .kanban {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  .column {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    display: none;
+  }
+  .column.active { display: flex; }
+
+  .column-header {
+    padding: 14px 16px;
+  }
+
+  .cards {
+    padding: 10px 14px 16px;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .card h3 { font-size: 13px; }
+  .card-title-zh { font-size: 12px; }
+  .card-abstract-en,
+  .card-abstract-zh { font-size: 11px; }
+
+  .footer {
+    padding: 14px;
+    font-size: 10px;
+  }
+}
+
+/* ==================== RESPONSIVE: Small Mobile (≤380px) ==================== */
+@media (max-width: 380px) {
+  .header h1 { font-size: 18px; }
+  .topic-tab {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>武汉纺织大学管理学院 · 科研简报</h1>
+    <div class="subtitle">2026年6月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div>
+    <div class="stats">
+      <span class="stat">📊 扫描论文 <strong>319</strong> 篇</span>
+      <span class="stat">🎯 主题匹配 <strong>27</strong> 篇</span>
+      <span class="stat">📅 更新 <strong>2026-06-30</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile topic tabs -->
+<div class="topic-tabs" id="topicTabs">
+  <button class="topic-tab active" data-topic="esg" onclick="switchTopic('esg')">🌱 ESG</button>
+  <button class="topic-tab" data-topic="ma" onclick="switchTopic('ma')">💼 并购</button>
+  <button class="topic-tab" data-topic="ai" onclick="switchTopic('ai')">🤖 AI营销</button>
+  <button class="topic-tab" data-topic="health" onclick="switchTopic('health')">🏥 健康信息</button>
+  <button class="topic-tab" data-topic="sc" onclick="switchTopic('sc')">📦 供应链</button>
+  <button class="topic-tab" data-topic="hr" onclick="switchTopic('hr')">👥 AI+HR</button>
+</div>
+
+<div class="kanban" id="kanban">
+
+<!-- COLUMN 1: ESG与可持续发展 -->
+<div class="column col-esg active" data-topic="esg">
+  <div class="column-header">
+    <h2>🌱 ESG与可持续发展</h2>
+    <span class="count">4篇</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-journal">Information Systems Research</div>
+      <h3>Attention or Sentiment: How Social Media React to ESG?</h3>
+      <div class="card-title-zh">关注还是情绪：社交媒体如何回应ESG？</div>
+      <div class="card-authors">Xiaoquan (Michael) Zhang, DaPeng Xu, Hong Hong et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Despite the increasing attention associated with ESG investing, a natural yet overlooked question is how investors would react to the ESG performance of firms, given that investors' activities can ultimately affect corporate ESG behaviors. Using social media data, this study investigates how investors' attention and sentiment react to firms' ESG performance, revealing distinct patterns of information processing and emotional response in the ESG context.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">尽管ESG投资日益受到关注，一个自然但被忽视的问题是：投资者如何回应企业的ESG表现？毕竟投资者的行为最终会影响企业的ESG行为。本研究利用社交媒体数据，探究投资者注意力与情绪如何对企业ESG表现做出反应，揭示了ESG情境下信息处理与情绪反应的独特模式。</div>
+      <a class="card-link" href="https://doi.org/10.1287/isre.2022.0251" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Journal of International Business Studies</div>
+      <h3>The Two Coases of Green Governance: MNEs and the Internalization of Environmental Externalities Through Global Value Chains</h3>
+      <div class="card-title-zh">绿色治理的双重科斯定理：跨国企业与环境外部性的全球价值链内部化</div>
+      <div class="card-authors">Elizabeth Yi Wang, Jeremy Clegg, Jiahui Cheng</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Green governance aims to resolve environmental externalities at minimum cost. By uniting Coase's two foundational theories (1937, 1960) we reframe MNEs' green governance as the internalization of environmental externalities through global value chains. This theoretical synthesis offers a novel lens for understanding how multinational enterprises can leverage their organizational boundaries to address sustainability challenges across borders.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">绿色治理旨在以最小成本解决环境外部性问题。本研究融合科斯的两大基础理论（1937年企业理论、1960年社会成本理论），将跨国企业的绿色治理重新定义为通过全球价值链实现环境外部性的内部化。这一理论综合为理解跨国企业如何利用组织边界应对跨境可持续发展挑战提供了新视角。</div>
+      <a class="card-link" href="https://doi.org/10.1057/s41267-026-00872-9" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Management Science</div>
+      <h3>Green Bonds: Reputational Bonding via Media Coverage</h3>
+      <div class="card-title-zh">绿色债券：通过媒体报道实现声誉绑定</div>
+      <div class="card-authors">Shirley Lu</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Building on prior literature showing that green bond issuance signals a firm's environmental commitment, this paper provides empirical evidence on a mechanism that gives credibility to this signal: reputational bonding via media coverage. The findings show that media scrutiny serves as a disciplining force, making green bond issuers more accountable for their environmental commitments.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">基于已有文献显示绿色债券发行传递企业环境承诺信号，本文为赋予该信号可信度的机制提供了实证证据：通过媒体报道实现声誉绑定。研究发现，媒体监督作为一种约束力量，使绿色债券发行方对其环境承诺更加负责。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2024.05701" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Management Science</div>
+      <h3>Rethinking the Value and Emission Implications of Green Bonds</h3>
+      <div class="card-title-zh">重新审视绿色债券的价值与减排效应</div>
+      <div class="card-authors">Jitendra Aswani, Shivaram Rajgopal</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Our analysis of green bonds issued between 2013 and 2022 reveals a distinctive shareholder preference for such assets, particularly among financial institutions. In the secondary market, the green bond premium is largely attributable to institutional demand rather than fundamental differences in environmental impact. The study calls for more rigorous evaluation of green bonds' actual emission reduction effects.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本文分析2013至2022年间发行的绿色债券，揭示了股东对此类资产的独特偏好，尤其在金融机构中表现突出。在二级市场上，绿色债券溢价主要归因于机构需求，而非环境影响方面的根本差异。研究呼吁对绿色债券的实际减排效果进行更严格的评估。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.00961" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- COLUMN 2: 资产并购 -->
+<div class="column col-ma active" data-topic="ma">
+  <div class="column-header">
+    <h2>💼 资产并购</h2>
+    <span class="count">4篇</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-journal">Management Science</div>
+      <h3>Venture Capital and Private M&amp;A Contracting</h3>
+      <div class="card-title-zh">风险投资与私募并购合同研究</div>
+      <div class="card-authors">Lauren J. Vollon</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">This study investigates the role of venture capital (VC) firms in private mergers and acquisitions (M&amp;A) contracting, particularly in reducing information asymmetry. Analyzing a proprietary data set of private M&amp;A transactions, the paper finds that VC-backed targets use more contingent consideration and fewer seller-friendly provisions, suggesting that VC involvement improves information quality in these opaque transactions.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本研究探讨风险投资公司在私募并购合同中的作用，尤其是在减少信息不对称方面。通过分析私募并购交易的专有数据集，研究发现有VC支持的被收购方使用更多的或有对价和更少的卖方友好条款，表明VC的参与提高了这些不透明交易中的信息质量。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.00654" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Management Science</div>
+      <h3>Takeover Threats and Mandatory Disclosure Avoidance: Evidence from Contract Redactions</h3>
+      <div class="card-title-zh">收购威胁与强制披露规避：来自合同信息涂黑的证据</div>
+      <div class="card-authors">Dichu Bao, Lixin (Nancy) Su, Chris X. Zhao et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Mandatory disclosure is a primary source of public information available to acquirers, yet little is known about how potential target managers respond to takeover threats by avoiding mandatory disclosures. Using redacted material contracts as a setting, this study finds that firms facing higher takeover threats are more likely to redact information from their mandatory filings, revealing a defensive disclosure strategy.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">强制性信息披露是收购方可获取公开信息的主要来源，但人们对潜在目标公司管理者如何通过回避强制披露来应对收购威胁知之甚少。本研究以合同信息涂黑为研究场景，发现面临更高收购威胁的企业更倾向于在强制申报中隐藏信息，揭示了一种防御性披露策略。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2024.05948" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">MIS Quarterly</div>
+      <h3>Health Information Technology Redeployment From Targets to Acquirers in the Healthcare Industry: The Role of Co-Specialized IT Assets</h3>
+      <div class="card-title-zh">医疗行业健康IT资产重新部署：协同专业化IT资产的作用</div>
+      <div class="card-authors">Chengxin Cao, Gautam Ray, Mani Subramani et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">In view of the increasing number of hospital mergers and acquisitions (M&amp;As) and the significant role of healthcare services in the economy, this study sheds light on how health IT assets are redeployed from targets to acquirers. The findings demonstrate that the co-specialization between IT and organizational resources significantly influences the post-merger IT integration outcomes and overall M&amp;A performance in healthcare settings.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">鉴于医院并购数量不断增加以及医疗服务在经济中的重要地位，本研究揭示了健康信息技术资产如何从被收购方向收购方重新部署。研究结果表明，IT与组织资源之间的协同专业化显著影响医疗行业中并购后的IT整合效果和整体并购绩效。</div>
+      <a class="card-link" href="https://doi.org/10.25300/misq/2025/18693" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">The Accounting Review</div>
+      <h3>Selling Its Soul? Private Equity and the Commercialization of the Attest Profession</h3>
+      <div class="card-title-zh">出卖灵魂？私募股权与审计行业的商业化</div>
+      <div class="card-authors">Nicole Donahoo, Christy S. Nielson, Jeffrey Pickerd</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">The recent influx of deals between accounting and private equity (PE) firms has raised concerns regarding potential implications for the attest profession. Through interviews with 20 attest partners from PE-affiliated and non-PE-affiliated firms, this study explores how PE ownership reshapes audit firm culture, professional judgment, and commercialization pressures in the accounting industry.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">近期会计事务所与私募股权公司之间的交易潮引发了对审计行业潜在影响的担忧。本研究通过对私募附属和非私募附属事务所的20位审计合伙人进行访谈，探讨PE所有权如何重塑审计事务所文化、专业判断以及会计行业的商业化压力。</div>
+      <a class="card-link" href="https://doi.org/10.2308/tar-2025-0459" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- COLUMN 3: AI营销/数智营销 -->
+<div class="column col-ai active" data-topic="ai">
+  <div class="column-header">
+    <h2>🤖 AI营销/数智营销</h2>
+    <span class="count">4篇</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-journal">Journal of Marketing</div>
+      <h3>Personalization in Marketing Communication: A Meta-Analysis</h3>
+      <div class="card-title-zh">营销传播中的个性化：一项元分析</div>
+      <div class="card-authors">Martin Eisend, Dominika Niewiadomska, Guda van Noort</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Personalization in marketing communication may increase relevance, and thus lead to successful persuasion, but at the same time may trigger privacy concerns, thus leading to persuasion failure. This meta-analysis synthesizes empirical findings across multiple studies to identify the conditions under which personalization enhances versus undermines marketing effectiveness, providing a comprehensive framework for personalized communication strategies.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">营销传播中的个性化可能提升相关性从而成功说服，但也可能触发隐私担忧从而导致说服失败。本荟萃分析综合多项实证研究，识别个性化在何种条件下增强或削弱营销效果，为个性化传播策略提供了全面的分析框架。</div>
+      <a class="card-link" href="https://doi.org/10.1177/00222429261460888" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Production and Operations Management</div>
+      <h3>Governed Agentic AI for Retail Baskets: A Consumer World Model with Inventory-Aware Actions</h3>
+      <div class="card-title-zh">受治理的智能体AI零售推荐：具有库存感知的消费者世界模型</div>
+      <div class="card-authors">Xiexin Liu, Xinwei Chen</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Retail recommendation systems increasingly operate as real-time decision engines that must personalize suggestions while respecting operational constraints such as inventory availability, category rules, and business objectives. This study proposes a governed agentic AI framework that combines a consumer world model with inventory-aware actions, enabling more practical and operationally feasible personalized recommendations in retail environments.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">零售推荐系统日益成为实时决策引擎，必须在个性化推荐的同时遵守库存可用性、品类规则和商业目标等运营约束。本研究提出一个受治理的智能体AI框架，将消费者世界模型与库存感知行动相结合，实现零售环境中更实用、运营上可行的个性化推荐。</div>
+      <a class="card-link" href="https://doi.org/10.1177/10591478261458079" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Journal of Marketing Research</div>
+      <h3>Modeling Dynamic Consumer Preferences from Few-Shot Data: A Meta-Learning Approach</h3>
+      <div class="card-title-zh">从小样本数据建模动态消费者偏好：一种元学习方法</div>
+      <div class="card-authors">Mingzhang Yin, Khaled Boughanmi, Anirban Mukherjee</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">The ability to quickly capture and adapt to customer preferences is central for firms seeking to offer personalized products and improve retention. This objective becomes challenging when individual-level data are scarce. The study proposes a meta-learning approach that leverages cross-customer information to model dynamic preferences from limited data, enabling more agile personalization strategies.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">快速捕捉并适应客户偏好是企业提供个性化产品、提升客户留存的核心能力。当个体层面数据稀缺时这一目标尤为困难。本研究提出一种元学习方法，利用跨客户信息从有限数据中建模动态偏好，实现更加敏捷的个性化策略。</div>
+      <a class="card-link" href="https://doi.org/10.1177/00222437261458290" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">MIS Quarterly</div>
+      <h3>Enhancing AI-Assisted Purchase Decisions: The Role of the Sense of Autonomy</h3>
+      <div class="card-title-zh">增强AI辅助购买决策：自主感的作用</div>
+      <div class="card-authors">Jinghui (Jove) Hou, Shuai Yang, Guiyang Xiong et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Empowered by large-scale consumer data, AI systems act as shopping gurus, serving up highly personalized and expertly curated product recommendations. Despite the technological sophistication, consumer resistance persists. This study finds that fostering a sense of autonomy in AI-assisted purchase journeys significantly enhances consumer acceptance and decision satisfaction, identifying key design principles for human-AI collaborative shopping.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">借助大规模消费者数据，AI系统充当购物顾问，提供高度个性化和精心策划的产品推荐。尽管技术先进，消费者抵触仍然存在。本研究发现，在AI辅助购物过程中培养消费者自主感能显著提升接受度和决策满意度，识别了人机协作购物的关键设计原则。</div>
+      <a class="card-link" href="https://doi.org/10.25300/misq/2025/17607" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- COLUMN 4: 健康信息管理 -->
+<div class="column col-health active" data-topic="health">
+  <div class="column-header">
+    <h2>🏥 健康信息管理</h2>
+    <span class="count">3篇</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-journal">M&amp;SOM</div>
+      <h3>Increasing mHealth Usage Through Strategic Payer Incentives for Providers and Patients</h3>
+      <div class="card-title-zh">通过战略性支付激励提升移动健康使用率：面向提供方与患者</div>
+      <div class="card-authors">Saligrama Agnihothri, Arvind Sainathan, Balaraman Rajan</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Innovations in digital and mobile health (mHealth) services are transforming chronic care delivery by improving health outcomes and efficiency. However, despite the proven benefits, adoption remains low. This study develops an analytical model examining how strategic payer incentives targeting both healthcare providers and patients can increase mHealth utilization, providing practical guidance for healthcare policymakers.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">数字和移动健康服务的创新正在通过改善健康结果和效率来变革慢病管理。然而，尽管效益已被证实，采用率仍然较低。本研究构建分析模型，探讨针对医疗提供方和患者的战略性支付激励如何提升移动健康服务的使用率，为医疗政策制定者提供实践指导。</div>
+      <a class="card-link" href="https://doi.org/10.1287/msom.2025.0182" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">MIS Quarterly</div>
+      <h3>Health Information Technology Redeployment From Targets to Acquirers in the Healthcare Industry: The Role of Co-Specialized IT Assets</h3>
+      <div class="card-title-zh">医疗行业健康IT资产重新部署：协同专业化IT资产的作用</div>
+      <div class="card-authors">Chengxin Cao, Gautam Ray, Mani Subramani et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">In view of the increasing number of hospital mergers and acquisitions (M&amp;As) and the significant role of healthcare services in the economy, a variety of recent studies have shed light on how health IT assets are integrated post-merger. This research examines the co-specialization between health IT systems and organizational workflows, showing how IT redeployment success depends critically on complementary organizational resources and integration strategies.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">鉴于医院并购数量不断增加以及医疗服务在经济中的重要地位，近期研究开始关注健康IT资产在并购后如何整合。本研究考察健康IT系统与组织工作流程之间的协同专业化，展示IT重新部署的成功如何关键取决于互补性组织资源和整合策略。</div>
+      <a class="card-link" href="https://doi.org/10.25300/misq/2025/18693" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Information Systems Research</div>
+      <h3>Between Human and System Agency: Coping with Negative Incidents for Continued Effective Use of Wearables</h3>
+      <div class="card-title-zh">人与系统的能动性之间：应对负面事件以维持可穿戴设备的持续使用</div>
+      <div class="card-authors">(Multiple Authors)</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Wearable devices hold significant promise for promoting healthy behaviors, yet they often fall short of this potential when users disengage or encounter negative experiences. This study examines how users cope with negative incidents in wearable health device usage and identifies strategies that help maintain continued effective use, contributing to our understanding of sustained digital health engagement.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">可穿戴设备在促进健康行为方面具有巨大潜力，但当用户遇到负面体验或停止使用时往往难以实现这一潜力。本研究考察用户如何应对可穿戴健康设备使用中的负面事件，识别有助于维持持续有效使用的策略，增进了对数字健康持续参与的理解。</div>
+      <a class="card-link" href="https://doi.org/10.1287/isre.2022.0541" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- COLUMN 5: 供应链运用与管理 -->
+<div class="column col-sc active" data-topic="sc">
+  <div class="column-header">
+    <h2>📦 供应链运用与管理</h2>
+    <span class="count">4篇</span>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-journal">M&amp;SOM</div>
+      <h3>Endogenous Commitments: Implications for Supply Chains</h3>
+      <div class="card-title-zh">内生承诺：对供应链的影响</div>
+      <div class="card-authors">Narendra Singh</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Although a centralized firm selling durable products benefits from committing to future prices, it remains unclear whether this conclusion extends to a decentralized supply chain where upstream and downstream firms interact strategically. This study demonstrates that endogenous commitment choices by supply chain members fundamentally alter pricing dynamics, inventory decisions, and overall supply chain efficiency compared to centralized benchmarks.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">尽管集中化企业销售耐用品可从承诺未来价格中获益，但这一结论是否适用于上下游企业战略互动的分散式供应链尚不明确。本研究表明，供应链成员的内生承诺选择从根本上改变了定价动态、库存决策和整体供应链效率，与集中化基准相比存在显著差异。</div>
+      <a class="card-link" href="https://doi.org/10.1287/msom.2024.1270" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">M&amp;SOM</div>
+      <h3>Transmission Interaction Persistence (TIP): A Supply Chain and Epidemiological Model for Zoonotic Virus Outbreaks</h3>
+      <div class="card-title-zh">传播互动持续性（TIP）：人畜共患病毒暴发的供应链与流行病学模型</div>
+      <div class="card-authors">Retsef Levi, Nicholas Rengar, El Ghali Zerhouni</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Zoonotic viruses that jump from animals to humans, like avian influenza or SARS, have caused major pandemics in recent decades. This study develops the TIP model integrating supply chain dynamics with epidemiological modeling to understand how livestock supply chain structures influence zoonotic disease transmission and to inform intervention strategies that jointly optimize public health and supply chain resilience.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">从动物传播到人类的人畜共患病毒（如禽流感、SARS）近几十年来引发了重大疫情。本研究开发TIP模型，将供应链动力学与流行病学建模相结合，以理解畜牧业供应链结构如何影响人畜共患疾病传播，并为同时优化公共卫生和供应链韧性的干预策略提供依据。</div>
+      <a class="card-link" href="https://doi.org/10.1287/msom.2024.1318" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Production and Operations Management</div>
+      <h3>Supply Chain Coordination under Unknown Demand Distribution: Online Learning and Contracting</h3>
+      <div class="card-title-zh">未知需求分布下的供应链协调：在线学习与合同设计</div>
+      <div class="card-authors">Mengxiao Zhang, Shi Chen, Haipeng Luo et al.</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Multi-echelon stochastic inventory models with known demand distributions have long underpinned supply chain coordination theory, yet in practice demand distributions are rarely known ex ante. This study proposes an online learning approach combined with adaptive contracting mechanisms that enable supply chain coordination when demand must be learned over time, bridging the gap between theory and real-world implementation.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">多级随机库存模型假设已知需求分布，长期支撑供应链协调理论，但在实践中需求分布很少事先已知。本研究提出在线学习方法与自适应合同机制相结合，使得在需求需要随时间学习的情况下仍能实现供应链协调，弥合了理论与现实实施之间的差距。</div>
+      <a class="card-link" href="https://doi.org/10.1177/10591478261466542" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Management Science</div>
+      <h3>Financial Shocks and Firm Innovation in Supply Chain Networks</h3>
+      <div class="card-title-zh">金融冲击与供应网络中的企业创新</div>
+      <div class="card-authors">Emanuele Brancati, Raoul Minetti, Susan Chun Zhu</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">This study investigates the influence of supply chains on the transmission of financial shocks to firms' innovation activities. Using matched Italian firm-bank data over 2007–2017, the findings reveal that firms' engagement in supply chain relationships amplifies the propagation of financial shocks to innovation, with significant implications for how supply network structure affects firms' long-term innovative capacity.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本研究探讨供应链对金融冲击向企业创新活动传导的影响。利用2007-2017年意大利企业-银行匹配数据，研究发现企业参与供应链关系会放大金融冲击向创新的传播效应，对理解供应网络结构如何影响企业长期创新能力具有重要意义。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.03601" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- COLUMN 6: AI环境下的人力资源管理 -->
+<div class="column col-hr active" data-topic="hr">
+  <div class="column-header">
+    <h2>👥 AI环境下的人力资源管理</h2>
+    <span class="count">8篇</span>
+  </div>
+  <div class="cards">
+
+    <!-- Sub-theme 1 -->
+    <div style="margin-bottom:8px;padding:6px 8px;background:#422006;border-radius:6px;border:1px solid #78350f;">
+      <span style="font-size:11px;font-weight:700;color:#fbbf24;">▸ 数智化跃迁：AI与数据的全链路渗透</span>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Organization Science</div>
+      <h3>The Cybernetic Teammate: A Field Experiment on Generative AI and Teamwork</h3>
+      <div class="card-title-zh">控制论队友：生成式AI与团队协作的现场实验</div>
+      <div class="card-authors">Fabrizio Dell'Acqua, Charles Ayoubi, Hila Lifshitz, Raffaella Sadun</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">We examine how artificial intelligence (AI) impacts three core pillars of collaboration—performance enhancement, expertise integration, and social engagement—through a preregistered field experiment with 791 professionals at Procter &amp; Gamble. Working on a complex product innovation task, teams with AI assistance showed significant shifts in how expertise was integrated and how social dynamics evolved.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本研究通过宝洁公司791名专业人士参与的预注册现场实验，考察AI如何影响协作的三大核心支柱——绩效提升、专业知识整合与社会互动。在执行复杂产品创新任务时，有AI辅助的团队在专业知识整合方式和社会动态演变方面表现出显著变化。</div>
+      <a class="card-link" href="https://doi.org/10.1287/orsc.2025.20702" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Academy of Management Journal</div>
+      <h3>ChatGPT, a Hype That Teaches: Generative AI and the Collective Accumulation of Technology Literacy on Social Media</h3>
+      <div class="card-title-zh">ChatGPT：一场教导性炒作——生成式AI与社交媒体上技术素养的集体积累</div>
+      <div class="card-authors">Hassan Md. Hamadi, Anna Brattström</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">This study investigates how the public discourse surrounding ChatGPT on social media platforms contributes to the collective accumulation of AI-related technology literacy. Rather than treating the ChatGPT phenomenon as mere hype, the authors reframe it as a large-scale, informal learning process through which users collectively develop understanding, competencies, and critical awareness of generative AI technologies.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本研究探讨社交媒体上围绕ChatGPT的公共讨论如何促进AI相关技术素养的集体积累。作者不将ChatGPT现象视为单纯的炒作，而是将其重新定义为一种大规模非正式学习过程——用户借此集体发展对生成式AI技术的理解、能力和批判意识。</div>
+      <a class="card-link" href="https://doi.org/10.5465/amj.2024.0536" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <!-- Sub-theme 2 -->
+    <div style="margin-bottom:8px;padding:6px 8px;background:#422006;border-radius:6px;border:1px solid #78350f;">
+      <span style="font-size:11px;font-weight:700;color:#fbbf24;">▸ 技能本位革命：从"岗位"到"人"的范式转换</span>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Journal of Management</div>
+      <h3>Leveraging the Reputation of Being Socially Responsible: Evidence from Firms' Online Job Postings</h3>
+      <div class="card-title-zh">利用社会责任声誉招聘：来自企业在线招聘信息的证据</div>
+      <div class="card-authors">Qiang (John) Li, Bingyi Qin, Wenfeng Wang, Zheng Wang</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">While prior research has examined individuals' preference to work for socially responsible employers, little is known about how firms actively leverage their CSR reputation in recruiting talent. Drawing on the resource-based view, we conceptualize CSR reputation as a strategic resource that provides firms with a competitive advantage in the labor market, and analyze online job postings to document how firms signal their CSR credentials to attract qualified applicants.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">已有研究关注个体倾向于为社会责任感强的雇主工作，但对企业如何主动利用CSR声誉招聘人才知之甚少。本研究基于资源基础观，将CSR声誉概念化为企业在劳动力市场中获取竞争优势的战略资源，通过分析在线招聘信息记录企业如何传递CSR信号以吸引合格人才。</div>
+      <a class="card-link" href="https://doi.org/10.1177/01492063261448457" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Organization Science</div>
+      <h3>From Founders' Knowledge to Economic Value Capture in Academic and Employee Startups</h3>
+      <div class="card-title-zh">从创始人知识到经济价值获取：学术与员工创业企业研究</div>
+      <div class="card-authors">Mahka Moeen</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Economic value capture is crucial for entrepreneurial startups, as it conditions the commercial viability of the technological opportunities underlying their founding. Startups vary in whether they capture value, and if so, whether through markets for product or technology. This study examines how founders' prior knowledge—shaped by academic versus employee career paths—influences value capture strategies and the subsequent career trajectories of organizational members.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">经济价值获取对创业企业至关重要，决定了其技术机会的商业可行性。不同创业企业在是否获取价值及通过产品市场还是技术市场获取价值方面存在差异。本研究考察创始人先前知识（学术路径vs.雇员路径塑造）如何影响价值获取策略及组织成员的后续职业轨迹。</div>
+      <a class="card-link" href="https://doi.org/10.1287/orsc.2023.18121" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <!-- Sub-theme 3 -->
+    <div style="margin-bottom:8px;padding:6px 8px;background:#422006;border-radius:6px;border:1px solid #78350f;">
+      <span style="font-size:11px;font-weight:700;color:#fbbf24;">▸ 组织与人的韧性：不确定性中守护"人"的价值</span>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Organization Science</div>
+      <h3>Outsiders at the Helm: When Institutional Outsiderness Helps or Hurts Public Leaders' Crisis Management Performance</h3>
+      <div class="card-title-zh">外部人掌舵：制度性外部人身份何时帮助或损害公共领导者的危机管理绩效</div>
+      <div class="card-authors">Lin Jiang, Dong Liu, Yan Yu</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Institutional outsiders have become increasingly common in public administrations, coinciding with a growing prevalence of public crises. Yet we know little about whether and under what conditions leaders with limited political experience perform well or poorly during such crises. Drawing on strategic leadership and crisis management theories, this study identifies boundary conditions under which outsider leaders' fresh perspectives become assets versus liabilities.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">制度性外部人在公共行政领域日益普遍，恰逢公共危机频发。然而，我们对政治经验有限的领导者在此类危机中表现优劣的条件知之甚少。本研究借助战略领导力与危机管理理论，识别外部领导者新鲜视角转化为优势或劣势的边界条件。</div>
+      <a class="card-link" href="https://doi.org/10.1287/orsc.2024.18656" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Academy of Management Journal</div>
+      <h3>Impact, Interrupted: How and When Thwarted Prosocial Impact Undermines Employee Performance and Retention</h3>
+      <div class="card-title-zh">被打断的影响：受阻的亲社会影响如何及何时削弱员工绩效与留任意愿</div>
+      <div class="card-authors">Jordan D. Nielsen, Kinshuk Sharma, Daniel D. Goering</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Employees are increasingly motivated by the desire to make a positive difference through their work. But when organizational barriers thwart their prosocial impact, the psychological consequences can be severe. This study develops and tests a model of how interrupted prosocial impact cascades into diminished performance and increased turnover intentions, identifying critical moderating factors that can buffer against these negative effects.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">员工越来越渴望通过工作产生积极影响，但当组织障碍阻碍其亲社会影响时，心理后果可能十分严重。本研究构建并检验了一个模型，揭示受阻的亲社会影响如何连锁导致绩效下降和离职意愿上升，并识别了能够缓冲这些负面效应的关键调节因素。</div>
+      <a class="card-link" href="https://doi.org/10.5465/amj.2024.0445" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <!-- Sub-theme 4 -->
+    <div style="margin-bottom:8px;padding:6px 8px;background:#422006;border-radius:6px;border:1px solid #78350f;">
+      <span style="font-size:11px;font-weight:700;color:#fbbf24;">▸ 全球化与多元人才管理</span>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Journal of Management</div>
+      <h3>Rewriting the Imprint: How #MeToo Led CEOs From Male-Dominant Cultures to Increase Gender Equality</h3>
+      <div class="card-title-zh">重写烙印：#MeToo如何引导男性主导文化中的CEO提升性别平等</div>
+      <div class="card-authors">Michael J. Mueller, Taco H. Reus</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">This paper examines how CEOs' cultural imprints shape women's representation in corporate leadership and how social movements can alter these effects. Building on imprinting theory, we argue that transformative social movements, such as the #MeToo movement, can create secondary sensitive periods during which CEOs from male-dominant cultures become more receptive to gender equality initiatives, effectively "rewriting" their earlier cultural imprints.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">本文考察CEO的文化烙印如何塑造女性在企业领导层中的代表性，以及社会运动如何改变这些效应。基于烙印理论，研究认为#MeToo等变革性社会运动可创造二次敏感期，在此期间来自男性主导文化的CEO对性别平等举措更加开放，有效"重写"了其早期文化烙印。</div>
+      <a class="card-link" href="https://doi.org/10.1177/01492063261449761" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+    <div class="card">
+      <div class="card-journal">Journal of International Business Studies</div>
+      <h3>Populism, Regime Characteristics, and MNC Location Choice</h3>
+      <div class="card-title-zh">民粹主义、政权特征与跨国企业区位选择</div>
+      <div class="card-authors">Srividya Jandhyala, Vera Kunczer, Thomas Lindner</div>
+      <div class="card-section-label">▎English Abstract</div>
+      <div class="card-abstract-en">Countries with populist governments are less attractive investment destinations for Multinational Corporations (MNCs), as foreign firms tend to be delegitimized and targeted as members of the outgroup. However, populist governments vary in the extent to which they delegitimize foreign firms. This study examines how regime characteristics moderate the negative effect of populism on MNC location choices, offering implications for global talent deployment and multinational HR strategy.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">民粹主义政府执政的国家对跨国企业吸引力较低，因为外资企业往往被去合法化并作为外部群体被针对。然而，民粹主义政府在外资去合法化程度上存在差异。本研究考察政权特征如何调节民粹主义对跨国企业区位选择的负面影响，为全球人才部署和跨国人力资源战略提供启示。</div>
+      <a class="card-link" href="https://doi.org/10.1057/s41267-026-00878-3" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>数据来源：<a href="https://api.crossref.org" target="_blank" rel="noopener">CrossRef API</a> · 检索范围：UTD24 全部期刊 · 出版月份：2026年6月</p>
+  <p>论文链接均为 DOI 真实地址，可直接访问获取全文（部分可能需要机构订阅）</p>
+  <p style="margin-top:6px;"><a href="../.." style="color:#818cf8;">← 返回科研简报首页</a></p>
+</div>
+
+<script>
+function switchTopic(topic) {
+  // Update tabs
+  document.querySelectorAll('.topic-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.topic-tab[data-topic="${topic}"]`).classList.add('active');
+
+  // Update columns
+  document.querySelectorAll('.column').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.column[data-topic="${topic}"]`).classList.add('active');
+
+  // Scroll to top of content
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
