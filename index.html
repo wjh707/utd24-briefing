@@ -184,6 +184,10 @@ body {
   border-color: #3b82f6;
   color: #93c5fd;
 }
+.month-link.upcoming {
+  opacity: 0.35;
+  pointer-events: none;
+}
 .month-link .dot {
   width: 6px;
   height: 6px;
@@ -282,26 +286,11 @@ body {
           <span class="dot"></span> 6月
           <span class="mo">27篇</span>
         </a>
-        <span class="month-link" style="opacity:0.3;cursor:default;">
-          5月
-          <span class="mo">待发布</span>
-        </span>
-        <span class="month-link" style="opacity:0.3;cursor:default;">
-          4月
-          <span class="mo">待发布</span>
-        </span>
-        <span class="month-link" style="opacity:0.3;cursor:default;">
-          3月
-          <span class="mo">待发布</span>
-        </span>
-        <span class="month-link" style="opacity:0.3;cursor:default;">
-          2月
-          <span class="mo">待发布</span>
-        </span>
-        <span class="month-link" style="opacity:0.3;cursor:default;">
-          1月
-          <span class="mo">待发布</span>
-        </span>
+        <a href="2026/05/" class="month-link upcoming">5月<span class="mo">即将发布</span></a>
+        <a href="2026/04/" class="month-link upcoming">4月<span class="mo">即将发布</span></a>
+        <a href="2026/03/" class="month-link upcoming">3月<span class="mo">即将发布</span></a>
+        <a href="2026/02/" class="month-link upcoming">2月<span class="mo">即将发布</span></a>
+        <a href="2026/01/" class="month-link upcoming">1月<span class="mo">即将发布</span></a>
       </div>
     </div>
   </div>
