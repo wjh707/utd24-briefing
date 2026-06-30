@@ -104,19 +104,7 @@ body {
   z-index: 99;
 }
 .topic-tabs::-webkit-scrollbar { display: none; }
-.topic-tab {
-  flex-shrink: 0;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid #334155;
-  background: #1e293b;
-  color: #94a3b8;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
+
 .topic-tab.active { color: var(--text); }
 .topic-tab[data-topic="esg"].active { background: #065f46; border-color: #34d399; }
 .topic-tab[data-topic="ma"].active { background: #701a75; border-color: #f472b6; }
@@ -407,7 +395,7 @@ body {
   </div>
 </div>
 
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;font-size:13px;">
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;">
   <a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:var(--accent);text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid var(--accent);border-radius:16px;">← 返回首页</a>
   <span style="color:var(--text3);">2026年6月 · <span id="navTopic" style="display:none;"></span></span>
 </div>
@@ -894,6 +882,8 @@ function showAll() {
   var hash = window.location.hash.replace('#','');
   if (hash && document.querySelector('.column[data-topic="'+hash+'"]')) {
     switchTopic(hash);
+  } else {
+    switchTopic('esg');
   } else {
     switchTopic('esg');
   }
