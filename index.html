@@ -6,11 +6,18 @@
 <title>武汉纺织大学管理学院 · 科研简报</title>
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+/* Time theme */
+:root { --bg:#0f172a;--bg2:#1e293b;--border:#334155;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--text4:#475569; }
+body[data-theme="morning"] { --bg:#f0f4f8;--bg2:#fff;--border:#d1d5db;--text:#1e293b;--text2:#475569;--text3:#64748b; }
+body[data-theme="afternoon"] { --bg:#f8fafc;--bg2:#fff;--border:#cbd5e1;--text:#0f172a;--text2:#334155;--text3:#475569; }
+body[data-theme="evening"] { --bg:#1e1b2e;--bg2:#2d2a3e;--border:#3d3a4e;--text:#e8e4f0;--text2:#a89bb8;--text3:#7d6f8e; }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
+  transition: background 0.8s, color 0.8s;
 }
 .hero {
   background: linear-gradient(180deg, #1a1a2e 0%, #16213e 60%, #0f172a 100%);
@@ -30,12 +37,12 @@ body {
   background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.hero .subtitle { color: #64748b; font-size: clamp(13px, 2vw, 15px); }
+.hero .subtitle { color: var(--text3); font-size: clamp(13px, 2vw, 15px); }
 .hero .meta { margin-top: 12px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.hero .meta span { font-size: 12px; color: #475569; }
+.hero .meta span { font-size: 12px; color: var(--text4); }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .section-title { text-align: center; padding: 40px 0 16px; }
-.section-title h2 { font-size: 18px; font-weight: 600; color: #94a3b8; }
+.section-title h2 { font-size: 18px; font-weight: 600; color: var(--text2); }
 .section-title .line {
   width: 40px; height: 3px; background: linear-gradient(90deg, #60a5fa, #a78bfa);
   margin: 10px auto 0; border-radius: 2px;
@@ -51,7 +58,7 @@ body {
 .dir-card:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
 .dir-card .icon { font-size: 28px; margin-bottom: 10px; }
 .dir-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.dir-card p { font-size: 12px; color: #64748b; line-height: 1.5; }
+.dir-card p { font-size: 12px; color: var(--text3); line-height: 1.5; }
 .dir-card .tag {
   display: inline-block; margin-top: 10px; font-size: 10px;
   padding: 2px 8px; border-radius: 10px;
@@ -92,7 +99,7 @@ body {
   padding-bottom: 8px; border-bottom: 1px solid #1e293b;
 }
 .archive .empty {
-  font-size: 12px; color: #475569; padding: 12px 0; font-style: italic;
+  font-size: 12px; color: var(--text4); padding: 12px 0; font-style: italic;
 }
 .footer {
   text-align: center; padding: 24px; border-top: 1px solid #1e293b;
@@ -247,5 +254,13 @@ body {
   <p>武汉纺织大学管理学院 · 科研简报 | 数据来源：<a href="https://api.crossref.org">CrossRef API</a> · 托管于 <a href="https://github.com/wjh707/utd24-briefing">GitHub Pages</a></p>
 </div>
 
+
+<script>
+(function(){
+  var h=new Date().getHours();
+  var t=h>=6&&h<12?'morning':h>=12&&h<18?'afternoon':h>=18&&h<22?'evening':'night';
+  document.body.setAttribute('data-theme',t);
+})();
+</script>
 </body>
 </html>
