@@ -75,7 +75,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Mic
   </div>
 </div>
 
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;font-size:13px;">
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;">
   <a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:var(--accent, #60a5fa);text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid var(--accent, #60a5fa);border-radius:16px;">← 返回首页</a>
   <span style="color:var(--text3);">2026年3月 · <span id="navTopic" style="display:none;"></span></span>
 </div>
@@ -297,7 +297,6 @@ function showAll(){
   document.body.setAttribute('data-theme',t);
   var hash=window.location.hash.replace('#','');
   if(hash&&document.querySelector('.column[data-topic="'+hash+'"]')){switchTopic(hash);}
-  else{switchTopic('esg');}
 })();
 </script>
 </body>
