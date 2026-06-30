@@ -409,6 +409,11 @@ body {
   </div>
 </div>
 
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;font-size:13px;">
+  <a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:var(--accent);text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid var(--accent);border-radius:16px;">← 返回首页</a>
+  <span style="color:var(--text3);">2026年6月 · <span id="navTopic" style="display:none;"></span></span>
+</div>
+
 <!-- Mobile topic tabs -->
 <div class="topic-tabs" id="topicTabs">
   <button class="topic-tab active" data-topic="esg" onclick="switchTopic('esg')">🌱 ESG</button>
@@ -853,6 +858,9 @@ function switchTopic(topic) {
   var bc = document.getElementById('breadcrumbTopic');
   bc.textContent = ' › ' + (topicNames[topic]||topic);
   bc.style.display = 'inline';
+  // Nav bar topic
+  var nt = document.getElementById('navTopic');
+  if (nt) { nt.textContent = topicNames[topic]||topic; nt.style.display = 'inline'; }
 
   // Update tabs
   document.querySelectorAll('.topic-tab').forEach(t => t.classList.remove('active'));
@@ -875,6 +883,7 @@ function switchTopic(topic) {
 function showAll() {
   currentTopic = null;
   document.getElementById('breadcrumbTopic').style.display = 'none';
+  var nt = document.getElementById('navTopic'); if (nt) nt.style.display = 'none';
   document.getElementById('kanban').classList.remove('filtered');
   document.getElementById('showAllBar').classList.remove('visible');
   document.querySelectorAll('.column').forEach(c => c.classList.add('active'));
