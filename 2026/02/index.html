@@ -286,6 +286,7 @@ function showAll(){
   document.body.setAttribute('data-theme',t);
   var hash=window.location.hash.replace('#','');
   if(hash&&document.querySelector('.column[data-topic="'+hash+'"]')){switchTopic(hash);}
+  else{switchTopic('esg');}
 })();
 </script>
 </body>
