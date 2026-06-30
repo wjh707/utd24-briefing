@@ -8,27 +8,35 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* ==================== TIME-BASED THEME ==================== */
-:root {
+:root, body[data-theme="night"] {
   --bg: #0f172a; --bg2: #1e293b; --bg3: #0f172a;
   --border: #334155; --card-bg: #0f172a;
+  --card-border: #334155; --card-title: #f1f5f9;
+  --card-text: #94a3b8; --card-text2: #64748b;
   --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b;
   --hdr-from: #1e293b; --hdr-to: #0f172a;
 }
 body[data-theme="morning"] {
   --bg: #f0f4f8; --bg2: #ffffff; --bg3: #f8fafc;
   --border: #d1d5db; --card-bg: #ffffff;
+  --card-border: #e5e7eb; --card-title: #1e293b;
+  --card-text: #475569; --card-text2: #64748b;
   --text: #1e293b; --text2: #475569; --text3: #64748b;
   --hdr-from: #dbeafe; --hdr-to: #e0e7ff;
 }
 body[data-theme="afternoon"] {
   --bg: #f8fafc; --bg2: #ffffff; --bg3: #f1f5f9;
   --border: #cbd5e1; --card-bg: #ffffff;
+  --card-border: #e2e8f0; --card-title: #0f172a;
+  --card-text: #334155; --card-text2: #475569;
   --text: #0f172a; --text2: #334155; --text3: #475569;
   --hdr-from: #eff6ff; --hdr-to: #eef2ff;
 }
 body[data-theme="evening"] {
   --bg: #1e1b2e; --bg2: #2d2a3e; --bg3: #1a1728;
   --border: #3d3a4e; --card-bg: #1a1728;
+  --card-border: #2d2a3e; --card-title: #e8e4f0;
+  --card-text: #a89bb8; --card-text2: #7d6f8e;
   --text: #e8e4f0; --text2: #a89bb8; --text3: #7d6f8e;
   --hdr-from: #2d2a3e; --hdr-to: #1a1728;
 }
@@ -182,14 +190,14 @@ body {
 
 /* ==================== CARDS ==================== */
 .card {
-  background: #0f172a;
-  border: 1px solid #334155;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: clamp(12px, 2vw, 16px);
   transition: border-color 0.2s, transform 0.15s;
 }
 .card:hover {
-  border-color: #475569;
+  border-color: var(--card-text);
   transform: translateY(-1px);
 }
 .card-journal {
@@ -211,7 +219,7 @@ body {
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 2px;
-  color: #f1f5f9;
+  color: var(--card-title);
 }
 .card-title-zh {
   font-size: clamp(11px, 1.4vw, 13px);
@@ -222,7 +230,7 @@ body {
 }
 .card-authors {
   font-size: 10px;
-  color: #64748b;
+  color: var(--card-text2);
   margin-bottom: 8px;
   line-height: 1.4;
 }
@@ -231,24 +239,24 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #475569;
+  color: var(--card-text);
   margin: 8px 0 3px 0;
 }
 .card-abstract-en {
   font-size: clamp(10px, 1.4vw, 12px);
-  color: #94a3b8;
+  color: var(--card-text);
   line-height: 1.6;
   margin-bottom: 3px;
   padding-left: 8px;
-  border-left: 2px solid #334155;
+  border-left: 2px solid var(--card-border);
 }
 .card-abstract-zh {
   font-size: clamp(10px, 1.4vw, 12px);
-  color: #cbd5e1;
+  color: var(--card-title);
   line-height: 1.6;
   margin-bottom: 3px;
   padding-left: 8px;
-  border-left: 2px solid #475569;
+  border-left: 2px solid var(--card-text);
 }
 .card-link {
   display: inline-block;
@@ -709,7 +717,7 @@ body {
   <div class="cards">
 
     <!-- Sub-theme 1 -->
-    <div style="margin-bottom:8px;padding:6px 8px;background:#422006;border-radius:6px;border:1px solid #78350f;">
+    <div style="margin-bottom:8px;padding:6px 8px;background:var(--card-bg);border-radius:6px;border:1px solid var(--card-border);">
       <span style="font-size:11px;font-weight:700;color:#fbbf24;">▸ 数智化跃迁：AI与数据的全链路渗透</span>
     </div>
 
