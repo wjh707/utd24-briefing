@@ -299,6 +299,28 @@ body {
   }
   .column.active { display: flex; }
 
+/* Desktop: filter mode */
+@media (min-width: 641px) {
+  .kanban.filtered .column { display: none !important; }
+  .kanban.filtered .column.active { display: flex !important; flex: 1 1 auto; max-width: 800px; margin: 0 auto; }
+}
+
+/* Show-all button */
+.show-all-bar {
+  display: none;
+  text-align: center;
+  padding: 8px 20px;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+.show-all-bar.visible { display: block; }
+.show-all-btn {
+  font-size: 12px; color: #818cf8; text-decoration: none;
+  padding: 4px 14px; border: 1px solid #3730a3; border-radius: 16px;
+  display: inline-block; cursor: pointer;
+}
+.show-all-btn:hover { background: #1e1b4b; }
+
   .column-header {
     padding: 14px 16px;
   }
@@ -355,6 +377,10 @@ body {
   <button class="topic-tab" data-topic="health" onclick="switchTopic('health')">🏥 健康信息</button>
   <button class="topic-tab" data-topic="sc" onclick="switchTopic('sc')">📦 供应链</button>
   <button class="topic-tab" data-topic="hr" onclick="switchTopic('hr')">👥 AI+HR</button>
+</div>
+
+<div class="show-all-bar" id="showAllBar">
+  <span class="show-all-btn" onclick="showAll()">📋 显示全部主题</span>
 </div>
 
 <div class="kanban" id="kanban">
@@ -778,18 +804,44 @@ body {
 </div>
 
 <script>
+var currentTopic = null;
+
 function switchTopic(topic) {
+  currentTopic = topic;
   // Update tabs
   document.querySelectorAll('.topic-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.topic-tab[data-topic="${topic}"]`).classList.add('active');
+  var tab = document.querySelector('.topic-tab[data-topic="'+topic+'"]');
+  if (tab) tab.classList.add('active');
 
   // Update columns
   document.querySelectorAll('.column').forEach(c => c.classList.remove('active'));
-  document.querySelector(`.column[data-topic="${topic}"]`).classList.add('active');
+  var col = document.querySelector('.column[data-topic="'+topic+'"]');
+  if (col) col.classList.add('active');
 
-  // Scroll to top of content
+  // Desktop filter mode
+  document.getElementById('kanban').classList.add('filtered');
+  document.getElementById('showAllBar').classList.add('visible');
+
+  // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function showAll() {
+  currentTopic = null;
+  document.getElementById('kanban').classList.remove('filtered');
+  document.getElementById('showAllBar').classList.remove('visible');
+  document.querySelectorAll('.column').forEach(c => c.classList.add('active'));
+  document.querySelectorAll('.topic-tab').forEach(t => t.classList.remove('active'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// On page load, check hash
+(function(){
+  var hash = window.location.hash.replace('#','');
+  if (hash && document.querySelector('.column[data-topic="'+hash+'"]')) {
+    switchTopic(hash);
+  }
+})();
 </script>
 
 </body>
