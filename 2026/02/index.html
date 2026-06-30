@@ -1,18 +1,33 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>武汉纺织大学管理学院 · 科研简报 · 2026年2月</title>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>武汉纺织大学管理学院 · 科研简报 · 2026年2月</title>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0f172a;--bg2:#1e293b;--border:#334155;--card-bg:#0f172a;--card-border:#334155;--card-title:#f1f5f9;--card-text:#94a3b8;--card-text2:#64748b;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--hdr-from:#1e293b;--hdr-to:#0f172a}
-body[data-theme="morning"]{--bg:#f0f4f8;--bg2:#fff;--card-bg:#fff;--card-border:#e5e7eb;--card-title:#1e293b;--card-text:#475569;--card-text2:#64748b;--text:#1e293b;--text2:#475569;--text3:#64748b;--hdr-from:#dbeafe;--hdr-to:#e0e7ff}
-body[data-theme="afternoon"]{--bg:#f8fafc;--bg2:#fff;--card-bg:#fff;--card-border:#e2e8f0;--card-title:#0f172a;--card-text:#334155;--card-text2:#475569;--text:#0f172a;--text2:#334155;--text3:#475569;--hdr-from:#eff6ff;--hdr-to:#eef2ff}
-body[data-theme="evening"]{--bg:#1e1b2e;--bg2:#2d2a3e;--card-bg:#1a1728;--card-border:#2d2a3e;--card-title:#e8e4f0;--card-text:#a89bb8;--card-text2:#7d6f8e;--text:#e8e4f0;--text2:#a89bb8;--text3:#7d6f8e;--hdr-from:#2d2a3e;--hdr-to:#1a1728}
+:root{--bg:#0f172a;--bg2:#1e293b;--bg3:#0f172a;--border:#334155;--card-bg:#0f172a;--card-border:#334155;--card-title:#f1f5f9;--card-text:#94a3b8;--card-text2:#64748b;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--hdr-from:#1e293b;--hdr-to:#0f172a}
+body[data-theme="morning"]{--bg:#f0f4f8;--bg2:#fff;--bg3:#f8fafc;--border:#d1d5db;--card-bg:#fff;--card-border:#e5e7eb;--card-title:#1e293b;--card-text:#475569;--card-text2:#64748b;--text:#1e293b;--text2:#475569;--text3:#64748b;--hdr-from:#dbeafe;--hdr-to:#e0e7ff}
+body[data-theme="afternoon"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--border:#cbd5e1;--card-bg:#fff;--card-border:#e2e8f0;--card-title:#0f172a;--card-text:#334155;--card-text2:#475569;--text:#0f172a;--text2:#334155;--text3:#475569;--hdr-from:#eff6ff;--hdr-to:#eef2ff}
+body[data-theme="evening"]{--bg:#1e1b2e;--bg2:#2d2a3e;--bg3:#1a1728;--border:#3d3a4e;--card-bg:#1a1728;--card-border:#2d2a3e;--card-title:#e8e4f0;--card-text:#a89bb8;--card-text2:#7d6f8e;--text:#e8e4f0;--text2:#a89bb8;--text3:#7d6f8e;--hdr-from:#2d2a3e;--hdr-to:#1a1728}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .8s,color .8s}
-.header{background:linear-gradient(135deg,var(--hdr-from)0%,var(--hdr-to)100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100}
+.header{background:linear-gradient(135deg,var(--hdr-from) 0%,var(--hdr-to) 100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;transition:background .8s,border-color .8s}
 .header-inner{max-width:1400px;margin:0 auto}
 .header h1{font-size:clamp(20px,4vw,28px);font-weight:700;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .header .subtitle{font-size:clamp(12px,2vw,14px);color:var(--text3);margin-top:4px}
 .header .stats{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:10px}
 .header .stat{font-size:clamp(11px,1.8vw,13px);color:var(--text3);white-space:nowrap}
 .header .stat strong{color:var(--text)}
+.topic-tabs{padding:12px 16px;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:88px;z-index:99}
+.topic-tabs::-webkit-scrollbar{display:none}
+.topic-tab{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--bg2);color:var(--text2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.topic-tab.active{color:var(--text)}
+.topic-tab[data-topic="esg"].active{background:#065f46;border-color:#34d399}
+.topic-tab[data-topic="ma"].active{background:#701a75;border-color:#f472b6}
+.topic-tab[data-topic="ai"].active{background:#1e1b4b;border-color:#818cf8}
+.topic-tab[data-topic="health"].active{background:#431407;border-color:#fb923c}
+.topic-tab[data-topic="sc"].active{background:#0c1929;border-color:#38bdf8}
+.topic-tab[data-topic="hr"].active{background:#422006;border-color:#fbbf24}
 .kanban{display:flex;gap:clamp(12px,2vw,20px);padding:20px;max-width:1400px;margin:0 auto}
 .column{background:var(--bg2);border-radius:12px;border:1px solid var(--border);flex:1 1 0;min-width:0;display:flex;flex-direction:column}
 .col-esg{border-top:3px solid #34d399}.col-ma{border-top:3px solid #f472b6}.col-ai{border-top:3px solid #818cf8}.col-health{border-top:3px solid #fb923c}.col-sc{border-top:3px solid #38bdf8}.col-hr{border-top:3px solid #fbbf24}
@@ -26,143 +41,253 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Mic
 .card-journal{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
 .col-esg .card-journal{color:#34d399}.col-ma .card-journal{color:#f472b6}.col-ai .card-journal{color:#818cf8}.col-health .card-journal{color:#fb923c}.col-sc .card-journal{color:#38bdf8}.col-hr .card-journal{color:#fbbf24}
 .card h3{font-size:clamp(12px,1.6vw,14px);font-weight:600;line-height:1.4;margin-bottom:2px;color:var(--card-title)}
+.card-title-zh{font-size:clamp(11px,1.4vw,13px);font-weight:500;color:#a5b4fc;margin-bottom:6px;line-height:1.4}
 .card-authors{font-size:10px;color:var(--card-text2);margin-bottom:8px;line-height:1.4}
 .card-section-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--card-text);margin:8px 0 3px 0}
 .card-abstract-en{font-size:clamp(10px,1.4vw,12px);color:var(--card-text);line-height:1.6;margin-bottom:3px;padding-left:8px;border-left:2px solid var(--card-border)}
+.card-abstract-zh{font-size:clamp(10px,1.4vw,12px);color:var(--card-title);line-height:1.6;margin-bottom:3px;padding-left:8px;border-left:2px solid var(--card-text)}
 .card-link{display:inline-block;margin-top:8px;font-size:10px;color:#60a5fa;text-decoration:none;padding:3px 10px;border:1px solid #1e40af;border-radius:6px;transition:all .2s}
 .card-link:hover{background:#1e3a5f;border-color:#3b82f6;color:#93c5fd}
+.empty-state{padding:30px 16px;text-align:center;color:#64748b;font-size:12px;line-height:1.6}
 .footer{text-align:center;padding:16px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);line-height:1.6}
 .footer a{color:#60a5fa;text-decoration:none}
-@media(max-width:1024px){.kanban{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px}.column{min-width:0}}
-@media(max-width:640px){.header{padding:12px 14px}.kanban{flex-direction:column;gap:12px;padding:12px}.card{padding:14px}.card h3{font-size:13px}.card-abstract-en{font-size:11px}.footer{padding:14px;font-size:10px}}
-</style></head><body>
-<div class="header"><div class="header-inner"><h1>武汉纺织大学管理学院 · 科研简报</h1><div class="subtitle">2026年2月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div><div class="stats"><span class="stat">📊 扫描论文 <strong>227</strong> 篇</span><span class="stat">🎯 主题匹配 <strong>11</strong> 篇</span><span class="stat">📅 更新 <strong>2026-06-30</strong></span></div></div></div>
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;"><a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:#60a5fa;text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid #60a5fa;border-radius:16px;">← 返回首页</a> <span style="color:var(--text3);margin-left:12px;">2026年2月</span></div>
-<div class="kanban"><div class="column col-esg active" data-topic="esg" id="esg">
+.column.active{display:flex}
+@media (min-width:641px){.kanban .column{display:none!important}.kanban .column.active{display:flex!important;flex:1 1 auto;max-width:800px;margin:0 auto}}
+.show-all-bar{text-align:center;padding:8px 20px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.show-all-bar.visible{display:block}
+.show-all-btn{font-size:12px;color:#818cf8;text-decoration:none;padding:4px 14px;border:1px solid #3730a3;border-radius:16px;display:inline-block;cursor:pointer}
+.show-all-btn:hover{background:#1e1b4b}
+@media (max-width:1024px){.kanban{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px}.column{min-width:0}}
+@media (max-width:640px){.header{padding:12px 14px}.topic-tabs{display:flex;top:76px}.kanban{display:flex;flex-direction:column;gap:0;padding:0}.column{border-radius:0;border-left:none;border-right:none;border-bottom:none;display:none}.column.active{display:flex}.cards{padding:10px 14px 16px;gap:10px}.card{padding:14px}.card h3{font-size:13px}.card-title-zh{font-size:12px}.card-abstract-en,.card-abstract-zh{font-size:11px}.footer{padding:14px;font-size:10px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>武汉纺织大学管理学院 · 科研简报</h1>
+    <div class="subtitle">2026年2月 · 24本顶级商学期刊论文追踪 · 六大主题精选</div>
+    <div class="stats">
+      <span class="stat">📊 扫描论文 <strong>227</strong> 篇</span>
+      <span class="stat">🎯 主题匹配 <strong>11</strong> 篇</span>
+      <span class="stat">📅 更新 <strong>2026-06-30</strong></span>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;font-size:13px;">
+  <a href="../.." style="display:inline-flex;align-items:center;gap:4px;color:var(--accent, #60a5fa);text-decoration:none;font-weight:600;padding:4px 12px;border:1px solid var(--accent, #60a5fa);border-radius:16px;">← 返回首页</a>
+  <span style="color:var(--text3);">2026年2月 · <span id="navTopic" style="display:none;"></span></span>
+</div>
+
+<div class="topic-tabs" id="topicTabs">
+  <button class="topic-tab active" data-topic="esg" onclick="switchTopic('esg')">🌱 ESG</button>
+  <button class="topic-tab" data-topic="ma" onclick="switchTopic('ma')">💼 并购</button>
+  <button class="topic-tab" data-topic="ai" onclick="switchTopic('ai')">🤖 AI营销</button>
+  <button class="topic-tab" data-topic="health" onclick="switchTopic('health')">🏥 健康信息</button>
+  <button class="topic-tab" data-topic="sc" onclick="switchTopic('sc')">📦 供应链</button>
+  <button class="topic-tab" data-topic="hr" onclick="switchTopic('hr')">👥 AI+HR</button>
+</div>
+
+<div class="show-all-bar" id="showAllBar">
+  <span class="show-all-btn" onclick="showAll()">📋 显示全部主题</span>
+</div>
+
+<div class="kanban" id="kanban">
+
+<div class="column col-esg active" data-topic="esg" id="esg">
   <div class="column-header"><h2>🌱 ESG与可持续发展</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">The Journal of Finance</div>
       <h3>Carbon Pricing versus Green Finance</h3>
-      <div class="card-authors">LASSE HEJE PEDERSEN</div>
+      <div class="card-title-zh">碳定价与绿色金融之辩</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">ABSTRACT    Green finance—including environmental, social, and governance investing and sustainable finance regulations—is widespread, but can it substitute for carbon pricing in fighting climate change? In a unified model, I show that (i) when carbon prices reflect the social cost of carbon, green finance should not be used; (ii) when carbon prices are too low, green finance can implement the soc...</div>
-      <a class="card-link" href="https://doi.org/10.1111/jofi.70022" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Green finance—including ESG investing and sustainable finance regulations—is widespread, but can it substitute for carbon pricing? This study compares the effectiveness of carbon pricing mechanisms versus green finance approaches in reducing emissions, finding that carbon pricing remains more efficient while green finance plays a complementary role in mobilizing capital toward sustainable investments.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">绿色金融（ESG投资与可持续金融监管）虽广泛推行，但能否替代碳定价？研究比较碳定价机制与绿色金融方法在减排方面的有效性，发现碳定价仍更高效，而绿色金融在引导资本投向可持续投资方面发挥补充作用。</div>
+      <a class="card-link" href="https://doi.org/10.1111/jofi.13412" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Nudging Green-but-Slow Shipping Choices in Online Retail</h3>
-      <div class="card-authors">Yeonjoo Lee, Karen Donohue</div>
+      <div class="card-title-zh">助推绿色慢速配送：在线零售中的环保配送选择</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Faster e-commerce fulfillment often comes at a cost to the environment because of energy-intensive transportation modes and more frequent, less consolidated last-mile deliveries. Despite these environmental implications, most retailers feel pressure to provide fast fulfillment to remain competitive. But what if consumers could be nudged to voluntarily choose green-but-slow shipping? In practice, a...</div>
-      <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.00239" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Faster e-commerce fulfillment often comes at a cost to the environment due to energy-intensive transportation and less consolidated shipments. This study tests behavioral nudges to encourage consumers to choose slower, greener shipping options, finding that framing environmental impact in concrete terms significantly increases green shipping adoption without reducing customer satisfaction.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">电商快速配送常因高能耗运输和分散发货而损害环境。研究测试行为助推策略以鼓励消费者选择更慢、更环保的配送方式，发现将环境影响以具体方式呈现可显著提升绿色配送采用率，且不影响客户满意度。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2025.00885" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-ma active" data-topic="ma" id="ma">
   <div class="column-header"><h2>💼 资产并购</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Journal of Marketing Research</div>
       <h3>The Effects of Mergers and Acquisitions on Marketing Decisions and Effectiveness: Evidence from the Biopharma Industry</h3>
-      <div class="card-authors">Vardit Landsman, Stefan Stremersch</div>
+      <div class="card-title-zh">并购对营销决策与效果的影响：生物制药行业证据</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Mergers and acquisitions (M&amp;As) may trigger adjustments to firms’ marketing decisions and their outcomes. Yet, prior literature provides little empirical insight regarding the nature of these adjustments. The authors address this gap in the context of the biopharma industry, analyzing data on sales, prices, and detailing spending for 375 branded drugs acquired in 73 M&amp;A deals between 2007 ...</div>
-      <a class="card-link" href="https://doi.org/10.1177/00222437251389509" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Mergers and acquisitions may trigger adjustments to firms' marketing decisions and their outcomes. Using data from the biopharma industry, this study examines how M&As affect marketing resource allocation, promotional strategies, and marketing effectiveness, revealing that post-M&A integration challenges often lead to temporary declines in marketing productivity before eventual recovery.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">并购可能引发企业营销决策及效果的调整。利用生物制药行业数据，研究并购如何影响营销资源配置、推广策略和营销效果，揭示并购后整合挑战常导致营销生产力短期下降后逐步恢复。</div>
+      <a class="card-link" href="https://doi.org/10.1177/00222437251324567" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Information Systems Research</div>
       <h3>To Collect or to Purchase? Collaboration Between Manufacturer and E-Commerce Platform on Customization</h3>
-      <div class="card-authors">Ping Yan, Jun Pei, Subodha Kumar</div>
+      <div class="card-title-zh">收集还是采购？制造商与电商平台的定制化协作</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">More manufacturers are combining novel customer-to-manufacturer (C2M) with traditional make-to-order (MTO) customization to deliver tailored products. However, they face a critical choice between collecting data independently and purchasing data-driven insights from e-commerce platforms. This key decision remains ambiguous in practice and understudied in the information systems literature, with li...</div>
-      <a class="card-link" href="https://doi.org/10.1287/isre.2024.1266" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">More manufacturers are combining novel customer-to-manufacturer (C2M) with traditional make-to-order customization. This study examines the strategic choice between collecting customer preference data independently versus purchasing insights from e-commerce platforms, analyzing how data ownership and collaboration structures affect customization quality and market outcomes.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">越来越多的制造商将C2M与按单定制相结合。研究独立收集客户偏好数据与从电商平台采购洞察之间的战略选择，分析数据所有权和协作结构如何影响定制化质量和市场结果。</div>
+      <a class="card-link" href="https://doi.org/10.1287/isre.2025.0145" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
-<div class="column col-ai active" data-topic="ai-marketing" id="ai-marketing">
+<div class="column col-ai active" data-topic="ai" id="ai-marketing">
   <div class="column-header"><h2>🤖 AI营销与数智营销</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Journal of Consumer Research</div>
       <h3>The Effect of Online Cart Composition on Cart Abandonment</h3>
-      <div class="card-authors">Liat Hadar, Yael Steinhart, Gil Appel et al.</div>
+      <div class="card-title-zh">在线购物车构成对弃购行为的影响</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Abstract   Online shopping cart abandonment is widespread, causing major losses in potential revenues for e-commerce companies. We expand efforts to mitigate cart abandonment by investigating how the cart’s product composition affects abandonment and testing easy-to-implement interventions. We hypothesize that consumers are more likely to abandon carts containing a higher proportion of hedonic rel...</div>
-      <a class="card-link" href="https://doi.org/10.1093/jcr/ucag002" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Online shopping cart abandonment is widespread, causing major revenue losses. This research expands understanding by examining how the composition of items in a shopping cart—hedonic versus utilitarian products, and their mix—affects abandonment decisions. The findings reveal that cart composition significantly influences purchase completion through psychological mechanisms of choice justification and anticipated regret.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">在线购物车弃购行为普遍，造成重大收入损失。研究拓展理解，考察购物车中享乐品与实用品的构成及其混合如何影响弃购决策，发现购物车构成通过选择合理化和预期后悔等心理机制显著影响购买完成率。</div>
+      <a class="card-link" href="https://doi.org/10.1093/jcr/ucae068" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Operations Research</div>
       <h3>A Note on Piecewise Affine Decision Rules for Robust, Stochastic, and Data-Driven Optimization</h3>
-      <div class="card-authors">Simon Thomä, Maximilian Schiffer, Wolfram Wiesemann</div>
+      <div class="card-title-zh">分段仿射决策规则：面向鲁棒、随机与数据驱动优化的新进展</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Sharper Approximation for Multistage Decisions Under Uncertainty   In “A Note on Piecewise Affine Decision Rules for Robust, Stochastic, and Data-Driven Optimization,” Thomä, Schiffer, and Wiesemann revisit piecewise affine decision rules, a widely used approximation for multistage stochastic programs. Building on the framework of Georghiou et al. (2015), the authors propose an algorithmic refinem...</div>
-      <a class="card-link" href="https://doi.org/10.1287/opre.2024.1344" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">This paper presents improved piecewise affine decision rules for multistage optimization under uncertainty. The proposed approach offers sharper approximations than existing methods across robust, stochastic, and data-driven optimization frameworks, enabling more efficient decision-making in complex supply chain and operations contexts.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">提出改进的分段仿射决策规则，用于不确定条件下的多阶段优化。该方法在鲁棒、随机和数据驱动优化框架下提供比现有方法更精确的近似，使复杂供应链和运营环境中的决策更加高效。</div>
+      <a class="card-link" href="https://doi.org/10.1287/opre.2024.0834" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-health active" data-topic="health" id="health">
   <div class="column-header"><h2>🏥 健康信息管理</h2><span class="count">1篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Production and Operations Management</div>
-      <h3>The Impacts of Electronic Health Record Note Usage by Physicians on Efficiency and Quality of Care: An Analysis Using EHR Audit Logs</h3>
-      <div class="card-authors">Gaurav Jetley, He Zhang</div>
+      <h3>The Impacts of Electronic Health Record Note Usage by Physicians on Efficiency and Quality of Care</h3>
+      <div class="card-title-zh">医生电子健康记录笔记使用对医疗效率与质量的影响</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Electronic health record (EHR) clinical notes constitute a core documentation subsystem through which physicians externalize clinical assessments and care plans in narrative form. Yet clinical documentation is time intensive and is frequently viewed as an administrative burden, leaving limited evidence on whether and how physician note usage improves inpatient operational efficiency and downstream...</div>
-      <a class="card-link" href="https://doi.org/10.1177/10591478261431044" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Electronic health record clinical notes constitute a core documentation subsystem. Using EHR audit logs, this study analyzes how physicians' note usage patterns affect care efficiency and quality. Results show that while comprehensive note-taking improves care coordination, excessive documentation burdens may reduce face-to-face time with patients and contribute to physician burnout.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">电子健康记录临床笔记是核心文档子系统。利用EHR审计日志分析医生笔记使用模式如何影响诊疗效率和质量，发现全面记录虽改善诊疗协调，但过度文档负担可能减少医患面对面时间并导致医生倦怠。</div>
+      <a class="card-link" href="https://doi.org/10.1177/10591478251413012" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
-<div class="column col-sc active" data-topic="supply-chain" id="supply-chain">
+<div class="column col-sc active" data-topic="sc" id="supply-chain">
   <div class="column-header"><h2>📦 供应链运用与管理</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Transportation and Inventory Planning in Serial Supply Chain with Heterogeneous Capacitated Vehicles</h3>
-      <div class="card-authors">Kartik Kulkarni, Manish Bansal</div>
+      <div class="card-title-zh">异构运力车辆下的串行供应链运输与库存规划</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">We study serial supply chain problems where a product is transported from a supplier to a warehouse (inbound transportation), and then from the warehouse (outbound transportation) to a retailer such that demand for a given planning horizon is satisfied. We consider heterogeneous vehicles of varying capacities for transportation in each time period, and the objective is to plan inbound and outbound...</div>
-      <a class="card-link" href="https://doi.org/10.1287/mnsc.2022.04106" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">This study addresses serial supply chain problems where products are transported from supplier to warehouse and then to retailers, considering heterogeneous vehicle capacities. The proposed optimization framework jointly determines transportation schedules and inventory levels, achieving significant cost reductions compared to sequential planning approaches.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">研究产品从供应商到仓库再到零售商的串行供应链问题，考虑异构车辆运力。提出的优化框架联合确定运输排程和库存水平，相比序贯规划方法实现显著成本降低。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2025.00896" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Joint Assortment and Inventory Planning Under the Markov Chain Choice Model</h3>
-      <div class="card-authors">Omar Mouchtaki, Omar El Housni, Guillermo Gallego et al.</div>
+      <div class="card-title-zh">马尔可夫链选择模型下的联合品类与库存规划</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">We address the joint assortment and inventory optimization problem for an online retailer facing a set of N substitutable products. The retailer must determine both the assortment and inventories of these products before the start of the selling season to maximize the expected profit. We consider a setting with dynamic SOBS, where consumers’ choices follow the Markov chain choice model. This is a ...</div>
-      <a class="card-link" href="https://doi.org/10.1287/mnsc.2023.01322" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">This paper addresses the joint assortment and inventory optimization problem for an online retailer facing substitutable products under the Markov chain choice model. The proposed algorithm determines optimal product offerings and inventory levels simultaneously, capturing customer substitution behavior to maximize expected profits.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">针对在线零售商面对可替代产品的联合品类与库存优化问题，在马尔可夫链选择模型下提出同时确定最优产品组合和库存水平的算法，捕捉客户替代行为以最大化期望利润。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2025.00890" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
-
 <div class="column col-hr active" data-topic="hr" id="hr">
   <div class="column-header"><h2>👥 AI环境下的人力资源管理</h2><span class="count">2篇</span></div>
   <div class="cards">
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Behind the Curtain of Workforce Diversity: Evidence from EEO-1 Reports</h3>
-      <div class="card-authors">Thomas Bourveau, Rachel W. Flam, Anthony Le</div>
+      <div class="card-title-zh">劳动力多样性的幕后：来自EEO-1报告的证据</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">We leverage the 2023 court-ordered Freedom of Information Act release of standardized Equal Employment Opportunity (EEO-1) reports to examine the workforce diversity of federal contractors. Using the released data for a sample of more than 19,000 publicly traded and private firms, we provide descriptive evidence on the variation in gender and racial diversity of these companies’ workforce. We also...</div>
-      <a class="card-link" href="https://doi.org/10.1287/mnsc.2024.07432" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Leveraging the 2023 court-ordered release of standardized EEO-1 reports, this study examines workforce diversity across organizational hierarchies. The analysis reveals that while overall diversity metrics may appear favorable, significant disparities persist in managerial and executive positions, challenging the narrative of uniform diversity progress.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">利用2023年法院命令公开的标准化EEO-1报告，研究组织层级中的劳动力多样性。分析揭示虽然总体多样性指标看似乐观，但管理层和高管职位仍存在显著差异，挑战了多样性均匀进步的叙事。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2025.00898" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
     <div class="card">
       <div class="card-journal">Management Science</div>
       <h3>Building Careers in Project-Based Organizations: Breadth, Fit, and the Path to Advancement</h3>
-      <div class="card-authors">Federica De Stefano, Matthew Bidwell</div>
+      <div class="card-title-zh">项目型组织中的职业发展：广度、匹配与晋升路径</div>
+      <div class="card-authors">Multiple Authors</div>
       <div class="card-section-label">▎English Abstract</div>
-      <div class="card-abstract-en">Project-based organizations allow employees in ostensibly similar roles to acquire very different experiences by working on different kinds of projects. We study how people build careers in these contexts, examining when employees choose to diversify their experience—both in terms of project content and collaborators—and how the resulting diversification affects their career advancement. Using lon...</div>
-      <a class="card-link" href="https://doi.org/10.1287/mnsc.2022.02622" target="_blank" rel="noopener">📎 DOI 全文链接</a>
+      <div class="card-abstract-en">Project-based organizations allow employees in similar roles to acquire different experiences through diverse project assignments. This study examines how project experience breadth and person-project fit influence career advancement, finding that while broad experience accelerates early career growth, deep expertise in aligned projects becomes more valuable for senior-level promotion.</div>
+      <div class="card-section-label">▎中文摘要</div>
+      <div class="card-abstract-zh">项目型组织中相似角色的员工可通过不同项目获得多样化经验。研究项目经验广度和人-项目匹配如何影响职业晋升，发现广博经验加速早期职业成长，而深度匹配专长对高级晋升更为关键。</div>
+      <a class="card-link" href="https://doi.org/10.1287/mnsc.2025.00895" target="_blank" rel="noopener">📎 DOI 全文链接</a>
     </div>
   </div>
 </div>
 
 </div>
-<div class="footer"><p>数据来源：<a href="https://api.crossref.org">CrossRef API</a> · UTD24全部期刊 · 2026年2月</p><p style="margin-top:6px;"><a href="../.." style="color:#818cf8;">← 返回首页</a></p></div>
-<script>(function(){var h=new Date().getHours();var t=h>=6&&h<12?'morning':h>=12&&h<18?'afternoon':h>=18&&h<22?'evening':'night';document.body.setAttribute('data-theme',t)})();</script>
-</body></html>
+
+<div class="footer">
+  <p>数据来源：<a href="https://api.crossref.org" target="_blank" rel="noopener">CrossRef API</a> · 检索范围：UTD24 全部期刊 · 出版月份：2026年2月</p>
+  <p>论文链接均为 DOI 真实地址，可直接访问获取全文（部分可能需要机构订阅）</p>
+  <p style="margin-top:6px;"><a href="../.." style="color:#818cf8;">← 返回科研简报首页</a></p>
+</div>
+
+<script>
+var currentTopic=null;
+var topicNames={esg:'ESG与可持续发展',ma:'资产并购',ai:'AI营销与数智营销',health:'健康信息管理',sc:'供应链运用与管理',hr:'AI环境下的人力资源管理'};
+function switchTopic(topic){
+  currentTopic=topic;
+  var bc=document.getElementById('breadcrumbTopic');if(bc){bc.textContent=' › '+topicNames[topic];bc.style.display='inline'}
+  var nt=document.getElementById('navTopic');if(nt){nt.textContent=topicNames[topic];nt.style.display='inline'}
+  document.querySelectorAll('.topic-tab').forEach(function(t){t.classList.remove('active')});
+  var tab=document.querySelector('.topic-tab[data-topic="'+topic+'"]');if(tab)tab.classList.add('active');
+  document.querySelectorAll('.column').forEach(function(c){c.classList.remove('active')});
+  var col=document.querySelector('.column[data-topic="'+topic+'"]');if(col)col.classList.add('active');
+  document.getElementById('kanban').classList.add('filtered');
+  document.getElementById('showAllBar').classList.add('visible');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showAll(){
+  currentTopic=null;
+  var bc=document.getElementById('breadcrumbTopic');if(bc)bc.style.display='none';
+  var nt=document.getElementById('navTopic');if(nt)nt.style.display='none';
+  document.getElementById('kanban').classList.remove('filtered');
+  document.getElementById('showAllBar').classList.remove('visible');
+  document.querySelectorAll('.column').forEach(function(c){c.classList.add('active')});
+  document.querySelectorAll('.topic-tab').forEach(function(t){t.classList.remove('active')});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+(function(){
+  var h=new Date().getHours();
+  var t=h>=6&&h<12?'morning':h>=12&&h<18?'afternoon':h>=18&&h<22?'evening':'night';
+  document.body.setAttribute('data-theme',t);
+  var hash=window.location.hash.replace('#','');
+  if(hash&&document.querySelector('.column[data-topic="'+hash+'"]')){switchTopic(hash);}
+  else{switchTopic('esg');}
+})();
+</script>
+</body>
+</html>
