@@ -92,7 +92,6 @@ body {
 
 /* ==================== TOPIC SELECTOR (MOBILE) ==================== */
 .topic-tabs {
-  display: none;
   padding: 12px 16px;
   gap: 8px;
   overflow-x: auto;
@@ -337,13 +336,12 @@ body {
 
 /* Desktop: filter mode */
 @media (min-width: 641px) {
-  .kanban.filtered .column { display: none !important; }
-  .kanban.filtered .column.active { display: flex !important; flex: 1 1 auto; max-width: 800px; margin: 0 auto; }
+  .kanban .column { display: none !important; }
+  .kanban .column.active { display: flex !important; flex: 1 1 auto; max-width: 800px; margin: 0 auto; }
 }
 
 /* Show-all button */
 .show-all-bar {
-  display: none;
   text-align: center;
   padding: 8px 20px;
   background: var(--bg2);
@@ -896,6 +894,8 @@ function showAll() {
   var hash = window.location.hash.replace('#','');
   if (hash && document.querySelector('.column[data-topic="'+hash+'"]')) {
     switchTopic(hash);
+  } else {
+    switchTopic('esg');
   }
 })();
 </script>
